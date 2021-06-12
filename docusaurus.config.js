@@ -7,8 +7,12 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Casnode', // Usually your GitHub org/user name.
+  projectName: 'Casnode-website', // Usually your repo name.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh', 'fr', 'de', 'ko', 'ru', 'jp']
+  },
   themeConfig: {
     navbar: {
       title: 'Casnode',
@@ -27,6 +31,10 @@ module.exports = {
         {
           href: 'https://github.com/casbin/casnode',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
