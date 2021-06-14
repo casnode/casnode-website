@@ -1115,6 +1115,13 @@
   dependencies:
     commander "^2.15.1"
 
+"@crowdin/cli@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.nlark.com/@crowdin/cli/download/@crowdin/cli-3.6.1.tgz#3422536781be49808ab6abda8bb17cb29df01dbb"
+  integrity sha1-NCJTZ4G+SYCKtqvai7F8sp3wHbs=
+  dependencies:
+    shelljs "^0.8.4"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/@csstools/convert-colors/download/@csstools/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"

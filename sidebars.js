@@ -2,9 +2,11 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Forum Admin Instructions',
+      label: 'Getting Started',
       items: [
-        'getting-started'
+        'intro',
+        'main-features',
+        'installation'
       ]
     },
     {
