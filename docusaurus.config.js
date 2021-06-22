@@ -32,6 +32,16 @@ module.exports = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
+          label: 'API',
+          href: 'https://forum.casbin.com/swagger/',
+          position: 'left',
+        },
+        {
+          label: 'Forum',
+          href: 'https://forum.casbin.com/',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/casbin/casnode',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
