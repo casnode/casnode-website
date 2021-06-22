@@ -42,13 +42,13 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/casbin/casnode',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          type: 'localeDropdown',
           position: 'right',
         },
         {
-          type: 'localeDropdown',
+          href: 'https://github.com/casbin/casnode',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
@@ -66,6 +66,10 @@ module.exports = {
             {
               label: 'Overview',
               to: '/docs/',
+            },
+            {
+              label: 'Casnode API',
+              href: 'https://forum.casbin.com/swagger/'
             },
           ],
         },
