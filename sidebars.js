@@ -28,6 +28,17 @@ module.exports = {
       items: [
         'api-overview',
       ],
-    }
+    },
+    {
+      type: 'category',
+      label: 'Architecture',
+      collapsed: false,
+      items: [
+        'architecture-overview',
+        'main-package',
+        'routers',
+        'controllers'
+      ],
+    },
   ],
 };
