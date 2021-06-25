@@ -9,7 +9,7 @@ Please clone Casnode first, and follow these steps.
 
 ## 1. Setup Casdoor
 
-Casnode uses Casdoor to manage members. So you need to create an organization and an application for Casnode in a Casdoor instance. 
+Casnode uses [Casdoor](https://github.com/casbin/casdoor) to manage members. So you need to create an organization and an application for Casnode in a Casdoor instance. 
 
 Follow these steps to setup Casdoor for Casnode:
 - Naviate to Casdoor (Click [here](https://casdoor.org/docs/overview) for details of Casdoor)
@@ -19,8 +19,11 @@ Follow these steps to setup Casdoor for Casnode:
 - Remember the Organization name (Of course you can change the organization name first)
 - Click "Applications" in the top bar
 - Click "add" button
-- Remember the Application name (Of course you can change the organization name first)
-- Click "Edit" and remember the `Client ID` and `Client Secret`
+- Remember the Application name (Of course you can change the Application name first)
+- Click "Edit"
+- Select the organization you just created as the application organization
+- Modify the redirect URLs to the forum URL. If you are in a development environment, your redirect URL is http://localhost:3000/callback. If you are in a production environment, your redirect URL is http://yourip:7000/callback
+- Click "Save" and remember the `Client ID` and `Client Secret`
 
 ## 2. Modify `conf/app.conf`
 
