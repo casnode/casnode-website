@@ -110,12 +110,31 @@ module.exports = {
               <iframe src="https://ghbtns.com/github-btn.html?user=casbin&repo=casnode&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub">Casdoor</iframe>
               `
             },
+            {
+                html: `
+                <head>
+                <script>
+                var _hmt = _hmt || [];
+                </script>
+                </head>
+                <body>
+                <script type="text/javascript">
+                (function() {
+                  var hm = document.createElement("script");
+                  hm.src = "https://hm.baidu.com/hm.js?493c52d30425ea40af256baccc6c2c3b";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                  })();
+                  </script>
+                  </body>
+                `
+            },
           ],
         },
       ],
       logo: {
         alt: 'Casbin Logo',
-        src: 'img/casbin.png',
+        src: 'img/casbin_min.svg',
         href: 'https://casbin.org/',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Casbin contributors.`,
