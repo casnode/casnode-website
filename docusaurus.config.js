@@ -14,7 +14,7 @@ module.exports = {
   projectName: 'casnode-website', // Usually your repo name.
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh', 'fr', 'de', 'ru', 'jp', 'ko'],
+    locales: ['en', 'zh', 'fr', 'de', 'ko', 'ru', 'ja'],
   },
   themeConfig: {
     navbar: {
@@ -44,6 +44,13 @@ module.exports = {
         {
           type: 'localeDropdown',
           position: 'right',
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [
+            {
+              to: 'https://crowdin.com/project/casnode',
+              label: 'Help translate',
+            },
+          ],
         },
         {
           href: 'https://github.com/casbin/casnode',
