@@ -13,14 +13,14 @@ Enter git --version to view the git version, if it prompts Command'git' not foun
 #### Install golang
 The root user executes the following commands to download and decompress the Go binary file to the /usr/local directory.  
 ```shell
-wget -c https://dl.google.com/go/go1.16.5.linux-amd64.targz -O - | sudo tar -xz -C /usr/local
+wget -c https://dl.google.com/go/go1.16.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 Then we need to add go to the environment variables,
 sudo vim /etc/profile,
 Enter **i**, write the following code in the last line of the file.
 ```shell
 export GOROOT=/usr/local/go
-export PATH=\$PATH:\$GOROOT/bin
+export PATH=$PATH:$GOROOT/bin
 ```
 Press **Esc** and enter:wq and source /etc/profile. 
 
