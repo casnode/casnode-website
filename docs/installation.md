@@ -3,7 +3,7 @@ title: Installation
 slug: /installation
 ---
 
-These paragraphs will help you deploy Casnode on your server.If you want to install Casnode by BT panel,look [here.](./BTpanel.md)
+These paragraphs will help you deploy Casnode on your server.If you want to install Casnode by BT panel or docker,look [BTpanel.](./BTpanel.md) [docker](./Docker.md)
 
 Please clone Casnode first, and follow these steps.
 
