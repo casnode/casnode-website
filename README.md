@@ -106,35 +106,11 @@ The `src/pages/` subdirectory contains the Casnode components that make up the n
 
 ## Translation
 
-[Crowdin](https://crowdin.com/project/casdoor) is used for Casnode website's translation. You can contribute to the translation of your proficient languages on that.
+[Crowdin](https://crowdin.com/project/casdoor) and [Docusaurus i18n](https://docusaurus.io/docs/i18n/crowdin) is used for Casnode website's translation. You can contribute to the translation of your proficient languages on that.
 
 ### Build the translation project locally
 
 Please contact the Casnode team for manager access on Crowdin.
-
-### Manually trigger Crowdin [DEPRECATED]
-
-- Install Crowdin CLI:
-
-https://support.crowdin.com/cli-tool/
-
-- Setup environment variable:
-
-```
-CROWDIN_PERSONAL_TOKEN = XXX
-```
-
-- Upload:
-
-```
-yarn run crowdin upload
-```
-
-- Download:
-
-```
-yarn run crowdin download
-```
 
 ## License
 

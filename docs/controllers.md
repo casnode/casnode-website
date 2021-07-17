@@ -13,4 +13,6 @@ Please pay attention to the third parameter `"GET:GetTopics"`. This string is a 
 
 You can find the corresponding function of the request this way.
 
-**Tip:** If you are using `Goland`, you can press Ctrl + Shift + F, and search `func (c *ApiController) FunctionName` to locate to the function quickly.
+:::tip
+If you are using **Goland**, you can press `Ctrl+Shift+F`, and search `func (c *ApiController) FunctionName` to locate to the function quickly.
+:::
