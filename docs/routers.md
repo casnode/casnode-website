@@ -1,5 +1,5 @@
 ---
-title: routers
+title: Routers
 slug: /routers
 ---
 
