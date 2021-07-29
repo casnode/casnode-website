@@ -17,6 +17,13 @@ module.exports = {
     locales: ['en', 'zh', 'fr', 'de', 'ko', 'ru', 'ja'],
   },
   themeConfig: {
+    algolia: {
+      apiKey: '8ea21f5a34d5486e211da2d38a70bd37',
+      indexName: 'casnode',
+      searchParameters: {
+        facetFilters: ['language:LANGUAGE'],
+      },
+    },
     navbar: {
       title: 'Casnode',
       logo: {
