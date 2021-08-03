@@ -24,11 +24,14 @@ We first configure casdoor.
 cd casdoor
 vim conf/app.conf
 ```
-Modify dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(db:3306)/
+Modify dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(`db`:3306)/
 ```shell
 docker-compose up
 ```
 <br/>
+:::tip
+mysql and casdoor are in different docker containers.
+:::
 
 #### Configure casnode in casdoor
 Now that Casdoor has been configured, visit http://your-ip:8000 to configure Casnode.  
@@ -47,7 +50,7 @@ Next we configure in Casnode.
 cd casnode
 vim conf/app.conf
 ```
-Modify dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(db:3306)/.  
+Modify dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(`db`:3306)/.  
 Then find casdoorEndpoint, modify it to `http://your-ip:8000` (Casdoor backend address), find clientId and clientSecret, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set. Finally press **Esc**, enter: wq to save and exit.
 ```shell
 cd web
