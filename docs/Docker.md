@@ -57,6 +57,27 @@ cd web
 vim src/Conf.js
 ```
 Press **i**, modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify clientId to the clientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Click **Esc**, enter: wq to save and exit.
+open src/auth/Auth.js,modify
+```shell
+export function getSignupUrl() {
+  // return `${trim(authConfig.serverUrl)}/signup/${authConfig.appName}`;
+  return getSigninUrl().replace(
+    "/login/oauth/authorize",
+    "/signup/oauth/authorize"
+  );
+}
+```
+to
+```shell
+export function getSignupUrl() {
+  return `${trim(authConfig.serverUrl)}/signup/${authConfig.appName}`;
+  //return getSigninUrl().replace(
+  // "/login/oauth/authorize",
+  // "/signup/oauth/authorize"
+  //);
+}
+```
+Next, you need 
 ```shell
 cd ..
 docker-compose up
