@@ -23,3 +23,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.casnodewindow {
+  padding: 50px 0;
+  font-size: 1.3rem;
+  justify-content: center;
+  background-color: var(--ifm-color-emphasis-100);
+  line-height: 40px;
+}
