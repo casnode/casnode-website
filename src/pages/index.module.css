@@ -23,3 +23,37 @@
   align-items: center;
   justify-content: center;
 }
+
+.casnodewindow {
+  height: 490px;
+  width: 870px;
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-color-emphasis-100);
+  margin-right: 5rem;
+
+  box-shadow: 0 0 40px black;
+}
+
+.BrowserWindow {
+  background-color: var(--ifm-color-background-100);
+  border-radius: var(--ifm-global-radius);
+  border: 0;
+  height: 450px;
+  width: 870px;
+}
+
+.hearderwindow {
+  height: 450px;
+  width: 870px;
+  border-radius: 12.5px;
+  background-color: var(--ifm-color-background-100);
+}
+
+.iframediv {
+  height: 450px;
+  width: 870px;
+  overflow: hidden;
+  border-bottom-left-radius: var(--ifm-global-radius);
+  border-bottom-right-radius: var(--ifm-global-radius); 
+  background-color: var(--ifm-color-background-100);
+}
