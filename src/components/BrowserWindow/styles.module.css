@@ -1,10 +1,14 @@
 .browserWindow {
     border: 1px solid var(--ifm-color-emphasis-200);
-    border-top-left-radius: var(--ifm-global-radius);
-    border-top-right-radius: var(--ifm-global-radius);
+
+    height: 500px;
+    width: 870px;
+    border: 0;
   }
   
   .browserWindowHeader {
+    border-top-left-radius: var(--ifm-global-radius);
+    border-top-right-radius: var(--ifm-global-radius);
     align-items: center;
     background: var(--ifm-color-emphasis-200);
     display: flex;
