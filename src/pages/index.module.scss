@@ -1,0 +1,141 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ $ifm-bg: var(--ifm-color-background-100);
+ $ifm-radius: var(--ifm-global-radius);
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.casnodewindow {
+  height: 490px;
+  width: 870px;
+  border-radius: $ifm-radius;
+  background-color: $ifm-bg;
+  margin-right: 5rem;
+  box-shadow: 0 0 40px black;
+
+    BrowserWindow {
+      background-color: $ifm-bg;
+      border-radius: $ifm-radius;
+      border: 0;
+      height: 450px;
+      width: 870px;
+    }
+}
+
+.hearderwindow {
+  height: 450px;
+  width: 870px;
+  border-radius: 12.5px;
+  background-color: $ifm-bg;
+}
+
+.headeriframe {
+  height: 450px;
+  width: 870px;
+  overflow: hidden;
+  border-bottom-left-radius: $ifm-radius;
+  border-bottom-right-radius: $ifm-radius;
+  background-color: $ifm-bg;
+}
+
+.logincontent {
+  @extend .languagecontent;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.loginwindow {
+  height: 750px;
+  width: 870px;
+  margin-top: -80px;
+  margin-bottom: -80px;
+  border-radius: $ifm-radius;
+  background-color: $ifm-bg;
+  margin-right: -1rem;
+  box-shadow: 0 0 40px grey;
+  transform: scale(0.8);
+
+    BrowserWindow {
+      background-color: $ifm-bg;
+      border-radius: $ifm-radius;
+      border: 0;
+      height: 700px;
+      width: 870px;
+    }
+}
+
+.loginiframediv {
+  height: 700px;
+  width: 870px;
+  overflow: hidden;
+  border-bottom-left-radius: $ifm-radius;
+  border-bottom-right-radius: $ifm-radius;
+  background-color: $ifm-bg;
+}
+
+.loginiframe {
+  height: 700px;
+  width: 870px;
+  background-color: $ifm-bg;
+}
+
+
+
+.languagecontent {
+  padding: 60px 0;
+  font-size: 1.3rem;
+  justify-content: center;
+  line-height: 40px;
+}
+
+.languagewindow {
+  height: 500px;
+  width: 870px;
+  border-radius: $ifm-radius;
+  background-color: $ifm-bg;
+  box-shadow: 0 0 40px grey;
+
+    BrowserWindow {
+      background-color: $ifm-bg;
+      border-radius: $ifm-radius;
+      border: 0;
+      height: 450px;
+      width: 870px;
+    }
+}
+
+.languageiframediv {
+  height: 450px;
+  width: 870px;
+  overflow: hidden;
+  border-bottom-left-radius: $ifm-radius;
+  border-bottom-right-radius: $ifm-radius;
+  background-color: $ifm-bg;
+}
+
+.languageiframe {
+  height: 450px;
+  width: 870px;
+  background-color: $ifm-bg;
+}
