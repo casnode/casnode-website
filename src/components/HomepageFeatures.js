@@ -1,32 +1,45 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: translate({
+          message: 'Easy to Use',
+    }),
     Svg: require('../../static/img/model.svg').default,
     description: (
       <>
+      <Translate>
         Only few steps to setup Casnode!
+        </Translate>
       </>
     ),
   },
   {
-    title: 'All kinds of DB and OSS',
+    title: translate({
+          message: 'All kinds of DB and OSS',
+    }),
     Svg: require('../../static/img/storage.svg').default,
     description: (
       <>
+      <Translate>
         Casnode supports many kinds of Databases and OSS provider. And you can add your own providers easily!
+        </Translate>
       </>
     ),
   },
   {
-    title: 'Multi-Language Support',
+    title: translate({
+          message: 'Multi-Language Support',
+    }),
     Svg: require('../../static/img/language.svg').default,
     description: (
       <>
+      <Translate>
       Now, Casnode supports Chinese and English UI. We use i18n to support multi-lang, so you can make a PR or an issue to support your language!
+      </Translate>
       </>
     ),
   },
