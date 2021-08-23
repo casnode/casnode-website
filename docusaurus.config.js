@@ -39,6 +39,11 @@ module.exports = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
+          label: 'Help',
+          to: '/help',
+          position: 'left',
+        },
+        {
           label: 'API',
           href: 'https://forum.casbin.com/swagger/',
           position: 'left',
