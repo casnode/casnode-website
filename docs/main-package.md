@@ -22,9 +22,3 @@ beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 3600 * 24 * 365
 ```
 
 Please refer to [Beego session](https://beego.me/docs/mvc/controller/session.md) if you want to use another session adapter in Beego.
-
-## routers
-
-This package has 3 files. 
-
-`filter.go` This file contains 2 filters, `TransparentStatic` and 

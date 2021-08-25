@@ -14,5 +14,5 @@ Please pay attention to the third parameter `"GET:GetTopics"`. This string is a 
 You can find the corresponding function of the request this way.
 
 :::tip
-If you are using **Goland**, you can press `Ctrl+Shift+F`, and search `func (c *ApiController) FunctionName` to locate to the function quickly.
+If you are using **Goland**, you can press `Ctrl+Shift+F`(vscode use `Ctrl+F` instead), and search `func (c *ApiController) FunctionName` to locate to the function quickly.
 :::
