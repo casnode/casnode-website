@@ -22,21 +22,28 @@ Follow these steps to setup Casdoor for Casnode:
 - Sign into the organization "built-in"
 - Click **Organizations** in the top bar
 - Click **add** button
-- Remember the Organization name (Of course you can change the organization name first)
+- Remember the Organization name, here I use **casbin-forum** as my organization name:
+![organization](../static/img/organization.png)
+
 - Click **Applications** in the top bar
 - Click **add** button
-- Remember the Application name (Of course you can change the Application name first)
+- Remember the Application name, here I use forum as my application name:
 - Click **Edit**
+![application](../static/img/application.png)
+
 - Select the organization you just created as the application organization
-- Modify the redirect URLs to the forum URL. If you are in a developing environment, your redirect URL is http://localhost:3000/callback. If you are in a production environment, your redirect URL is http://yourip:7000/callback
+![select](../static/img/chooseorganization.png)
+- Modify the redirect URLs to the forum URL. If you are in a developing environment, your redirect URL is **http://localhost:3000/callback**. If you are in a production environment, your redirect URL is **http://yourip:7000/callback**
+![redirecturls](../static/img/redirecturls.png)
 - Click **Save** and remember the `Client ID` and `Client Secret`
+![client](../static/img/client.png)
 
 ### 2. Modify `conf/app.conf`
 
 Here is an explanation of the config items:
 
 Database connection:
-```ini
+```ini {2}
 driverName = mysql
 dataSourceName = root:123@tcp(localhost:3306)/
 dbName = casnode
@@ -57,7 +64,7 @@ If you can not access Google in normal ways, you need to set up a http proxy her
 httpProxy = "127.0.0.1:10808"
 ```
 Casdoor config:
-```ini
+```ini {2,5,8,13}
 # Your Casdoor endpoint in step 1
 casdoorEndpoint = http://localhost:8000
 
@@ -75,7 +82,7 @@ casdoorOrganization = "casbin-forum"
 
 ### 3. Modify `web/src/Conf.js`
 
-```js
+```js {3,6,9,12}
 export const AuthConfig = {
   // Your Casdoor endpoint in step 1
   serverUrl: "http://localhost:7001",
