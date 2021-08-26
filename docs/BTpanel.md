@@ -84,22 +84,28 @@ Click Users, click Add, then click Edit, modify the added user, click Organizati
 ### Configure Casnode
 
 Next we configure in Casnode.
+
 ```shell
 sudo su
 cd casnode
 go build main.go
 vim conf/app.conf
 ```
+
 Enter `i` and find
+
 ```
 dataSourceName = root:123@tcp(localhost:3306)/
 ```
-Change MySQL password provided by the BT panel to **123**, then find casdoorEndpoint, modify it to http://your-ip:8000 (Casdoor backend address), find **ClientId** and **ClientSecret**, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set. Finally press `Esc`, enter `:wq` to save and exit.
+
+Change MySQL password provided by the BT panel to **123**, then find casdoorEndpoint, modify it to http://your-ip:8000 (Casdoor backend address), find **ClientId** and **ClientSecret**, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to your set. Save and exit.
+
 ```shell
 cd web
 vim src/Conf.js
 ```
-Press `i`, modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify ClientId to the ClientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Click `Esc`, enter `:wq` to save and exit.
+
+Modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify ClientId to the ClientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Save and exit.
 ```shell
 npm install
 npm run build
