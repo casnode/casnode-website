@@ -22,7 +22,7 @@ function Help() {
               </div>
               <div className="col">
                 <h2><Translate>Gitter</Translate></h2>
-                <Translate>You can join the conversation on</Translate> <a hrerf="https://gitter.im/casbin/Lobby">Gitter</a> <Translate>for contributing help.</Translate>
+                <Translate>You can join the conversation on</Translate> <a hrerf="https://gitter.im/casbin/Lobby"><Translate>Gitter</Translate></a> <Translate>for contributing help.</Translate>
               </div>
               <div className="col">
                 <h2><Translate>Tencent QQ</Translate></h2>
@@ -30,7 +30,7 @@ function Help() {
               </div>
               <div className="col">
                 <h2>Github</h2>
-                <Translate>At our</Translate> <a href="https://github.com/casbin/casnode"><Translate>GitHub repo</Translate></a><Translate>, browse and submit</Translate> <a href="https://github.com/casbin/casnode/issues">issues</a> or <a href="https://github.com/casbin/casnode/pulls">pull requests</a> <Translate>for bugs you find or any new features you may want implemented.</Translate>
+                <Translate>At our</Translate> <a href="https://github.com/casbin/casnode"><Translate>GitHub repo</Translate></a><Translate>, browse and submit</Translate> <a href="https://github.com/casbin/casnode/issues">issues</a> <Translate>or</Translate> <a href="https://github.com/casbin/casnode/pulls">pull requests</a> <Translate>for bugs you find or any new features you may want implemented.</Translate>
               </div>
               </div>
               </div>
