@@ -23,20 +23,24 @@ Follow these steps to setup Casdoor for Casnode:
 - Click **Organizations** in the top bar
 - Click **add** button
 - Remember the Organization name, here I use **casbin-forum** as my organization name:
-![organization](../static/img/organization.png)
+![organization](./assets/organization.png)
 
 - Click **Applications** in the top bar
 - Click **add** button
 - Remember the Application name, here I use forum as my application name:
 - Click **Edit**
-![application](../static/img/application.png)
+
+![application](./assets/application.png)
 
 - Select the organization you just created as the application organization
-![select](../static/img/chooseorganization.png)
+
+![select](./assets/chooseorganization.png)
 - Modify the redirect URLs to the forum URL. If you are in a developing environment, your redirect URL is **http://localhost:3000/callback**. If you are in a production environment, your redirect URL is **http://yourip:7000/callback**
-![redirecturls](../static/img/redirecturls.png)
+
+![redirecturls](./assets/redirecturls.png)
 - Click **Save** and remember the `Client ID` and `Client Secret`
-![client](../static/img/client.png)
+
+![client](./assets/client.png)
 
 ### 2. Modify `conf/app.conf`
 
