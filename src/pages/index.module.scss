@@ -15,9 +15,51 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
+@media only screen and (max-width: 1145px) {
   .heroBanner {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .casnodewindow {
+    transform: scale(0.9);
+    margin-top: 40px;
+    margin-left: 5rem;
+  }
+
+  .loginwindow {
+    margin: auto;
+    margin-bottom: -5rem;
+    transform: scale(0.8);
+  }
+
+  .languagewindow {
+    margin: auto;
+    margin-top: -5rem;
+    transform: scale(0.8);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .heroBanner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .casnodewindow {
+    transform: scale(0.4);
+    margin-top: -6rem;
+    margin-bottom: -8rem;
+  }
+
+  .loginwindow {
+    margin: auto;
+    transform: scale(0.5);
+  }
+
+  .languagewindow {
+    margin: auto;
+    transform: scale(0.5);
   }
 }
 
@@ -68,13 +110,9 @@
 .loginwindow {
   height: 770px;
   width: 870px;
-  margin-top: -80px;
-  margin-bottom: -80px;
   border-radius: $ifm-radius;
   background-color: $ifm-bg;
-  margin-right: -1rem;
   box-shadow: 0 0 40px grey;
-  transform: scale(0.8);
 
     BrowserWindow {
       background-color: $ifm-bg;
