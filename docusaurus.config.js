@@ -24,6 +24,9 @@ module.exports = {
         facetFilters: ['language:LANGUAGE'],
       },
     },
+    googleAdsense: {
+      dataAdClient: "ca-pub-3509678918753247",
+    },
     navbar: {
       title: 'Casnode',
       logo: {
@@ -191,5 +194,8 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    'docusaurus-plugin-google-adsense',
+  ],
 };
