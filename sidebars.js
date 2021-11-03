@@ -19,8 +19,8 @@ module.exports = {
         'intro',
         'main-features',
         'installation',
-        'BTpanel',
-        'Docker',
+        'bt-panel',
+        'docker',
       ]
     },
     {
