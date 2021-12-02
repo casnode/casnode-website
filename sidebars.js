@@ -21,6 +21,7 @@ module.exports = {
         'installation',
         'bt-panel',
         'docker',
+        'migration',
       ]
     },
     {
