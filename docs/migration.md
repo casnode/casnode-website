@@ -81,7 +81,7 @@ This step will roughly take 10 minutes for 60,000 users.
 
 To migrate all your DiscuzX's forums to Casdoor's tabs and nodes:
 
-Run `TestAddForums` in: https://github.com/casbin/casnode/blob/master/discuzx/forum_sync_test.go
+Run `TestAddForums` in: https://github.com/casbin/casnode/blob/master/discuzx/forum_test.go
 
 This step will usually finish in 2 seconds.
 
@@ -91,7 +91,7 @@ To migrate all your DiscuzX's threads & posts to Casdoor's topics & replies:
 
 Run `TestAddThreads` in: https://github.com/casbin/casnode/blob/master/discuzx/thread_test.go
 
-This step will roughly take 45 minutes for 80,000 users.
+This step will roughly take 7 minutes for 10,000 users.
 
 ## Finalization
 
