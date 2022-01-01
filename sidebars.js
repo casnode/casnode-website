@@ -16,7 +16,7 @@ module.exports = {
       label: 'Getting Started',
       collapsed: false,
       items: [
-        'intro',
+        'overview',
         'main-features',
         'installation',
         'bt-panel',

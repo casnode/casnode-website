@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Casnode',
-  tagline: 'Next-generation forum software',
+  tagline: 'Next-generation forum software based on Go and React',
   url: 'https://casnode.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -24,9 +24,6 @@ module.exports = {
         facetFilters: ['language:LANGUAGE'],
       },
     },
-    googleAdsense: {
-      dataAdClient: "ca-pub-3509678918753247",
-    },
     navbar: {
       title: 'Casnode',
       logo: {
@@ -36,7 +33,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'overview',
           position: 'left',
           label: 'Docs',
         },
@@ -47,31 +44,30 @@ module.exports = {
           position: 'left',
         },
         {
-          label: 'API',
           href: 'https://forum.casbin.com/swagger/',
+          label: 'API',
           position: 'left',
         },
         {
-          label: 'Forum',
           href: 'https://forum.casbin.com/',
+          label: 'Forum',
           position: 'left',
         },
         {
           type: 'localeDropdown',
           position: 'right',
-          dropdownItemsBefore: [],
           dropdownItemsAfter: [
             {
-              to: 'https://crowdin.com/project/casnode',
+              to: 'https://crowdin.com/project/casnode-website',
               label: 'Help translate',
             },
           ],
         },
         {
           href: 'https://github.com/casbin/casnode',
+          position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
-          position: 'right',
         },
       ],
     },
@@ -82,12 +78,12 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Get Started',
-              to: '/docs/installation',
+              label: 'Overview',
+              to: '/docs/overview',
             },
             {
-              label: 'Overview',
-              to: '/docs/',
+              label: 'Get Started',
+              to: '/docs/installation',
             },
             {
               label: 'Casnode API',
@@ -99,19 +95,19 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Casbin website',
-              href: 'https://casbin.org',
+              label: 'Casnode',
+              href: 'https://casnode.org',
             },
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/search?q=casbin',
+              href: 'https://stackoverflow.com/search?q=casnode',
             },
             {
               label: 'Casbin Forum',
               href: 'https://forum.casbin.com/',
             },
             {
-              label: 'Chat on Gitter',
+              label: 'Gitter',
               href: 'https://gitter.im/casbin/Lobby',
             },
           ],
@@ -194,8 +190,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: [
-    'docusaurus-plugin-sass',
-    'docusaurus-plugin-google-adsense',
-  ],
+  plugins: ['docusaurus-plugin-sass'],
 };
