@@ -54,6 +54,11 @@ module.exports = {
           position: 'left',
         },
         {
+          href: 'https://gitter.im/casbin/casnode',
+          label: 'Gitter',
+          position: 'left',
+        },
+        {
           href: 'https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi',
           label: 'QQ Group',
           position: 'left',
@@ -100,21 +105,21 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Casnode',
-              href: 'https://casnode.org',
+              label: 'GitHub',
+              href: 'https://github.com/casnode',
             },
             {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/search?q=casnode',
             },
             {
-              label: 'Online Demo',
-              href: 'https://forum.casbin.com/',
+              label: 'Gitter',
+              href: 'https://gitter.im/casbin/casnode',
             },
             {
               label: "QQ Group",
-              href: "https://gitter.im/casbin/casnode",
-            }
+              href: "https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi",
+            },
           ],
         },
         {
