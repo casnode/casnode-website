@@ -50,7 +50,12 @@ module.exports = {
         },
         {
           href: 'https://forum.casbin.com/',
-          label: 'Forum',
+          label: 'Online Demo',
+          position: 'left',
+        },
+        {
+          href: 'https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi',
+          label: 'QQ Group',
           position: 'left',
         },
         {
@@ -103,13 +108,13 @@ module.exports = {
               href: 'https://stackoverflow.com/search?q=casnode',
             },
             {
-              label: 'Casbin Forum',
+              label: 'Online Demo',
               href: 'https://forum.casbin.com/',
             },
             {
-              label: 'Gitter',
-              href: 'https://gitter.im/casbin/Lobby',
-            },
+              label: "QQ Group",
+              href: "https://gitter.im/casbin/Lobby",
+            }
           ],
         },
         {

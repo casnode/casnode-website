@@ -15,13 +15,20 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title"><Translate>Casnode</Translate></h1>
         <br />
-        <p className="hero__subtitle"><Translate>Next-generation forum software</Translate></p>
+        <p className="hero__subtitle"><Translate>Next-generation forum software based on Go and React</Translate></p>
         <br />
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs">
+            style={{marginTop: "2rem", marginRight: "3rem", marginLeft: "3rem"}}
+            to="/docs/overview">
             <Translate>Get Started</Translate>
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            style={{marginTop: "2rem", marginRight: "3rem", marginLeft: "3rem"}}
+            to="https://forum.casbin.com/">
+            <Translate>Online Demo</Translate>
           </Link>
         </div>
       </div>
