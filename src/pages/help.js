@@ -22,7 +22,7 @@ function Help() {
               </div>
               <div className="col">
                 <h2><Translate>Gitter</Translate></h2>
-                <Translate>You can join the conversation on</Translate> <a href="https://gitter.im/casbin/Lobby"><Translate>Gitter</Translate></a> <Translate>for contributing help.</Translate>
+                <Translate>You can join the conversation on</Translate> <a href="https://gitter.im/casbin/casnode"><Translate>Gitter</Translate></a> <Translate>for contributing help.</Translate>
               </div>
               <div className="col">
                 <h2><Translate>Tencent QQ</Translate></h2>

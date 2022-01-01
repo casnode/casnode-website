@@ -113,7 +113,7 @@ module.exports = {
             },
             {
               label: "QQ Group",
-              href: "https://gitter.im/casbin/Lobby",
+              href: "https://gitter.im/casbin/casnode",
             }
           ],
         },
