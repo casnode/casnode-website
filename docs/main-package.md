@@ -1,6 +1,5 @@
 ---
 title: Main package
-slug: /main-package
 ---
 
 There are several packages in the backend of Casnode. The main function and the Beego framework call these packages when  the program starts.

@@ -1,6 +1,5 @@
 ---
 title: Overview
-slug: /
 ---
 
 Casnode is a forum developed by [Casbin community](https://casbin.org/). The detailed architecture:

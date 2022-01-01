@@ -1,6 +1,5 @@
 ---
 title: Overview
-slug: /architecture-overview
 ---
 
 Casnode is an open source project. An active community is its vitality. 

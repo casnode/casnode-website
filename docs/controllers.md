@@ -1,6 +1,5 @@
 ---
 title: Controllers
-slug: /controllers
 ---
 
 In `routers/router.go`, you can find lots of lines like 

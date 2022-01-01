@@ -1,6 +1,5 @@
 ---
 title: Migration from DiscuzX
-slug: /migration
 ---
 
 Casnode has provided a lot of Go scripts to help users migrate their forums from DiscuzX 3.x to Casnode. The scripts are located at: https://github.com/casbin/casnode/tree/master/discuzx

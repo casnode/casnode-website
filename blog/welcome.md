@@ -1,5 +1,5 @@
 ---
-slug: welcome
+slug: /welcome
 title: Welcome
 author: Kininaru
 author_title: Casbin Member

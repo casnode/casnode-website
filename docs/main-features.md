@@ -1,6 +1,5 @@
 ---
 title: Main Features
-slug: /main-features
 ---
 
 There special features distinguish Casnode from other forums. Here is a short introduction of these features. Read forward for more details.
