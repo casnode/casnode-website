@@ -204,4 +204,5 @@ module.exports = {
     ],
   ],
   plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
+  scripts: ['/js/gitter.js'],
 };
