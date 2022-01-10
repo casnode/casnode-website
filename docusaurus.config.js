@@ -24,6 +24,9 @@ module.exports = {
         facetFilters: ['language:LANGUAGE'],
       },
     },
+    hotjar: {
+      applicationId: '2775554',
+    },
     navbar: {
       title: 'Casnode',
       logo: {
@@ -200,5 +203,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
 };
