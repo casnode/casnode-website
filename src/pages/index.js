@@ -58,7 +58,7 @@ function LoginContent() {
         <div className={styles.loginwindow}>
         <BrowserWindow url="https://forum.casbin.com">
         <div className={styles.loginiframediv}>
-        <iframe className={styles.loginiframe} src="https://door.casbin.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum" width="870px" height="720px" scrolling="no" border="0" frameborder="0"></iframe>
+        <iframe className={styles.loginiframe} src="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum" width="870px" height="720px" scrolling="no" border="0" frameborder="0"></iframe>
         </div>
         </BrowserWindow>
       </div>
