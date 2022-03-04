@@ -40,7 +40,8 @@ module.exports = {
         'architecture-overview',
         'main-package',
         'routers',
-        'controllers'
+        'controllers',
+        'server-side-rendering',
       ],
     },
         'internationalization',
