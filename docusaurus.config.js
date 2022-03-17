@@ -57,13 +57,23 @@ module.exports = {
           position: 'left',
         },
         {
+          href: 'https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi',
+          label: 'QQ Group',
+          position: 'left',
+        },
+        {
           href: 'https://gitter.im/casbin/casnode',
           label: 'Gitter',
           position: 'left',
         },
         {
-          href: 'https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi',
-          label: 'QQ Group',
+          label: 'Pricing & Sales',
+          to: 'https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa',
+          position: 'left',
+        },
+        {
+          label: 'Contact',
+          to: 'https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa',
           position: 'left',
         },
         {
@@ -204,5 +214,5 @@ module.exports = {
     ],
   ],
   plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
-  scripts: ['/js/gitter.js'],
+  scripts: ['/js/tawk.js'],
 };
