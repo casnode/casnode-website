@@ -35,15 +35,9 @@ We first configure casdoor.
 cd casdoor
 vim conf/app.conf
 ```
-Modify `dataSourceName = root:123@tcp(localhost:3306)/` to `dataSourceName = root:123@tcp(db:3306)/`.
+Modify `dataSourceName = root:123456@tcp(db:3306)/ ` to `dataSourceName = root:123456@tcp(db:3306)/`. (Because mysql `root` pwd will be set to `123456`, you can modify it at `docker-compose.yml`)
 
-Then edit `docker-compose.yml`
-
-```shell
-vim docker-compose.yml
-```
-
-Modify `MYSQL_ROOT_PASSWORD: 123456` to `MYSQL_ROOT_PASSWORD: 123` and set containers to the network you create.
+Then edit `docker-compose.yml`, set containers to the network you create.
 
 Here is an example:
 
@@ -75,7 +69,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_ROOT_PASSWORD: 123456
     volumes:
       - /usr/local/docker/mysql:/var/lib/mysql
     networks:
@@ -112,26 +106,18 @@ Click Users, click Add, then click Edit, modify the added user, click Organizati
 
 ### Configure casnode
 Next we configure in Casnode.
-```shell
-cd casnode
-vim conf/app.conf
-```
-Modify **dataSourceName = root:123@tcp(localhost:3306)/** to **dataSourceName = root:123@tcp(db:3306)/** so that the data come from your database.
 
-Then find casdoorEndpoint, modify it to `http://your-ip:8000` (Casdoor backend address), find clientId and clientSecret, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set. Finally press **Esc**, enter: wq to save and exit.
+edit `./conf/app.conf`
 
-```shell
-cd web
-vim src/Conf.js
-```
-Press **i**, modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify clientId to the clientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Click **Esc**, enter: wq to save and exit.
+Modify `dataSourceName = root:123456@tcp(localhost:3306)/` to `dataSourceName = root:123456@tcp(db:3306)/` so that the data come from your database.
 
-Next, you need
+Then find `casdoorEndpoint`, modify it to `http://your-ip:8000` (Casdoor backend address), find `clientId` and `clientSecret`, and modify them to the previously remembered Application client id and client secret, find `casdoorOrganization`, modify the organization name to you set. 
 
-```shell
-cd ..
-vim docker-compose.yml
-```
+edit `./web/src/Conf.js`
+
+modify `serverUrl` to http://your-ip:8000 (Casdoor front-end access address), modify `clientId` to the clientId of the application just added, modify `appname` to the set application name, and modify the `organization` to the set organization name. 
+
+Next, you need edit `docker-compose.yml`
 
 You just need to configure it like casdoor and deploy containers in the network you created, here is an example:
 
