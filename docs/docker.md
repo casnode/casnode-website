@@ -35,7 +35,7 @@ We first configure casdoor.
 cd casdoor
 vim conf/app.conf
 ```
-Modify `dataSourceName = root:123456@tcp(db:3306)/ ` to `dataSourceName = root:123456@tcp(db:3306)/`. (Because mysql `root` pwd will be set to `123456`, you can modify it at `docker-compose.yml`)
+Modify `dataSourceName = root:123456@tcp(localhost:3306)/ ` to `dataSourceName = root:123456@tcp(db:3306)/`. (Because mysql `root` pwd will be set to `123456`, you can modify it at `docker-compose.yml`)
 
 Then edit `docker-compose.yml`, set containers to the network you create.
 
