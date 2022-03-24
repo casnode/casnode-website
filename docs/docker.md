@@ -17,6 +17,16 @@ git clone https://github.com/casbin/casnode.git
 Now, you can see two folders, casnode and casdoor.
 <br/>
 
+#### Create network
+
+Casdoor and Casnode need to be deployed on the same network
+
+You can create bridge network like this command
+
+```shell
+docker network create -d bridge casdoor
+```
+
 ### Configure casdoor
 
 #### Run casdoor
@@ -25,7 +35,60 @@ We first configure casdoor.
 cd casdoor
 vim conf/app.conf
 ```
-Modify dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(db:3306)/
+Modify `dataSourceName = root:123@tcp(localhost:3306)/` to `dataSourceName = root:123@tcp(db:3306)/`.
+
+Then edit `docker-compose.yml`
+
+```shell
+vim docker-compose.yml
+```
+
+Modify `MYSQL_ROOT_PASSWORD: 123456` to `MYSQL_ROOT_PASSWORD: 123` and set containers to the network you create.
+
+Here is an example:
+
+```yaml
+version: '3.1'
+services:
+  casdoor:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      RUNNING_IN_DOCKER: "true"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./conf:/conf/
+    networks:
+      - casdoor
+
+  db:
+    restart: always
+    image: mysql:8.0.25
+    platform: linux/amd64
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - /usr/local/docker/mysql:/var/lib/mysql
+    networks:
+      - casdoor
+
+networks:
+  casdoor:
+    external:
+      name: casdoor
+```
+
+Then start casdoor with docker-compose
+
 ```shell
 docker-compose up
 ```
@@ -62,33 +125,34 @@ cd web
 vim src/Conf.js
 ```
 Press **i**, modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify clientId to the clientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Click **Esc**, enter: wq to save and exit.
-open src/auth/Auth.js,modify
-```shell
-export function getSignupUrl() {
-  // return `${trim(authConfig.serverUrl)}/signup/${authConfig.appName}`;
-  return getSigninUrl().replace(
-    "/login/oauth/authorize",
-    "/signup/oauth/authorize"
-  );
-}
-```
-to
-
-```shell
-export function getSignupUrl() {
-  return `${trim(authConfig.serverUrl)}/signup/${authConfig.appName}`;
-  //return getSigninUrl().replace(
-  // "/login/oauth/authorize",
-  // "/signup/oauth/authorize"
-  //);
-}
-```
 
 Next, you need
 
 ```shell
 cd ..
-docker-compose up
+vim docker-compose.yml
+```
+
+You just need to configure it like casdoor and deploy containers in the network you created, here is an example:
+
+```
+version: '3.1'
+services:
+  casnode:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+     - "7000:7000"
+    volumes:
+      - ./conf:/conf/
+    networks:
+      - casnode
+
+networks:
+  casnode:
+    external: 
+      name: casdoor
 ```
 
 Next visit http://your-ip:7000, click login, enter the account you added before, user_1/123, you have now successfully logged in to Casnode.  
