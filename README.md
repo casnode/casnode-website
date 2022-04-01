@@ -12,7 +12,7 @@ The site configuration and documentation powering Casnode's website: https://cas
 
 ### Installation
 
-1.  `git clone https://github.com/casnode/casnode-website` to download source code.
+1.  `git clone https://github.com/casnode/casnode-website` to download source code. 
 1.  `cd casnode-website` to go into the project root.
 1.  `yarn install` to install the website's npm dependencies (or `npm install`, if not using Yarn).
 
