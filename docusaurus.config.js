@@ -3,8 +3,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Casnode',
-  tagline: 'Casnode - Next-generation forum software based on Go and React',
+  title: 'Casnode · Next-generation forum software based on Go and React',
   url: 'https://casnode.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
