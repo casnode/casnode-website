@@ -15,7 +15,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title"><Translate>Casnode</Translate></h1>
         <br />
-        <p className="hero__subtitle"><Translate>Next-generation forum software based on Go and React</Translate></p>
+        <p className="hero__subtitle"><Translate>A beautiful and simple next-generation forum software based on Go and React</Translate></p>
         <br />
         <div className={styles.buttons}>
           <Link
@@ -99,8 +99,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Next-generation forum software`}
-      description="Description will go into a meta tag in <head />">
+      title={`Casnode · A beautiful and simple next-generation forum software based on Go and React`}
+      description="A beautiful and simple next-generation forum software based on Go and React">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
