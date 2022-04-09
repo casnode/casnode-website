@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Casnode',
-  tagline: 'Next-generation forum software based on Go and React',
+  tagline: 'Casnode - Next-generation forum software based on Go and React',
   url: 'https://casnode.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -26,6 +26,9 @@ module.exports = {
     },
     hotjar: {
       applicationId: '2775554',
+    },
+    googleAdsense: {
+      dataAdClient: 'ca-pub-3509678918753247',
     },
     navbar: {
       title: 'Casnode',
@@ -213,6 +216,6 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
-  scripts: ['/js/tawk.js'],
+  plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar', 'docusaurus-plugin-google-adsense'],
+  scripts: ['/js/gitter.js', '/js/tawk.js'],
 };
