@@ -17,11 +17,10 @@ module.exports = {
   },
   themeConfig: {
     algolia: {
-      apiKey: '8ea21f5a34d5486e211da2d38a70bd37',
+      appId: 'D23M79WNKM',
+      apiKey: '608237dde484891d17f2c8b31f37f6d9',
       indexName: 'casnode',
-      searchParameters: {
-        facetFilters: ['language:LANGUAGE'],
-      },
+      contextualSearch: true,
     },
     hotjar: {
       applicationId: '2775554',
