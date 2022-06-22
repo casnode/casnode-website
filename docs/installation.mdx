@@ -45,13 +45,45 @@ Follow these steps to setup Casdoor for Casnode:
 
 Here is an explanation of the config items:
 
-Database connection:
+#### Database connection:
+
+#### Casnode database
+
 ```ini {2}
 driverName = mysql
 dataSourceName = root:123@tcp(localhost:3306)/
 dbName = casnode
 ```
-Object Storage Service (Casnode uses OSS to store resources):
+
+#### Casdoor database
+
+```ini
+casdoorDbName = casdoor
+```
+
+:::tip
+Casdoor's `driverName` and `dataSourceName` are the same as casnode by default. If your Casdoor and Casnode are not
+in the same database, you can set up the casdoor database in [casdoor/adapter.go](https://github.com/casbin/casnode/casdoor/adapter.go)
+
+Here we provide an example:
+
+1. Add casdoor configuration in `conf/app.conf`:
+
+```ini
+casdoorDriverName =
+casdoorDataSourceName =
+```
+
+2. Modify the `func InitCasdoorAdapter()`:
+
+
+```go
+	adapter = NewAdapter(beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDbName"))
+```
+:::
+
+#### Object Storage Service (Casnode uses OSS to store resources):
+
 ```ini
 OSSProvider = ""
 accessKeyID     = ""
@@ -62,11 +94,15 @@ OSSRegion = ""
 OSSEndPoint = ""
 OSSBucket = ""
 ```
+
 If you can not access Google in normal ways, you need to set up a http proxy here:
+
 ```ini
 httpProxy = "127.0.0.1:10808"
 ```
-Casdoor config:
+
+#### Casdoor config:
+
 ```ini {2,5,8,13}
 # Your Casdoor endpoint in step 1
 casdoorEndpoint = http://localhost:8000
