@@ -25,9 +25,6 @@ module.exports = {
     hotjar: {
       applicationId: '2775554',
     },
-    googleAdsense: {
-      dataAdClient: 'ca-pub-3509678918753247',
-    },
     navbar: {
       title: 'Casnode',
       logo: {
@@ -211,7 +208,7 @@ var _hmt = _hmt || [];
       },
     ],
   ],
-  plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar', 'docusaurus-plugin-google-adsense'],
+  plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
   scripts: [
     '/js/gitter.js',
     'https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js',
