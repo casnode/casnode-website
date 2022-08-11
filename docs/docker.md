@@ -14,18 +14,15 @@ Next, clone Casdoor and Casndoe from GitHub.
 git clone https://github.com/casbin/casdoor.git
 git clone https://github.com/casbin/casnode.git
 ```
-Now, you can see two folders, casnode and casdoor.
+Now, you can see two folders, `casnode` and `casdoor`.
 <br/>
 
 ### Configure casdoor
 
 #### Run casdoor
 We first configure casdoor.
-```shell
-cd casdoor
-vim conf/app.conf
-```
-Modify dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(db:3306)/
+
+Edit `conf/app.conf`, modify **dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(db:3306)/**
 ```shell
 docker-compose up
 ```
@@ -49,45 +46,16 @@ Click Users, click Add, then click Edit, modify the added user, click Organizati
 
 ### Configure casnode
 Next we configure in Casnode.
-```shell
-cd casnode
-vim conf/app.conf
-```
-Modify **dataSourceName = root:123@tcp(localhost:3306)/** to **dataSourceName = root:123@tcp(db:3306)/** so that the data come from your database.
 
-Then find casdoorEndpoint, modify it to `http://your-ip:8000` (Casdoor backend address), find clientId and clientSecret, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set. Finally press **Esc**, enter: wq to save and exit.
+Edit `conf/app.conf`, modify **dataSourceName = root:123@tcp(localhost:3306)/** to **dataSourceName = root:123@tcp(db:3306)/** so that the data come from your database.
 
-```shell
-cd web
-vim src/Conf.js
-```
-Press **i**, modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify clientId to the clientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Click **Esc**, enter: wq to save and exit.
-open src/auth/Auth.js,modify
-```shell
-export function getSignupUrl() {
-  // return `${trim(authConfig.serverUrl)}/signup/${authConfig.appName}`;
-  return getSigninUrl().replace(
-    "/login/oauth/authorize",
-    "/signup/oauth/authorize"
-  );
-}
-```
-to
+Then find `casdoorEndpoint`, modify it to `http://your-ip:8000` (Casdoor backend address), find `clientId` and `clientSecret`, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set.
+
+Edit `web/src/Conf.js` , modify `serverUrl` to http://your-ip:8000 (Casdoor front-end access address), modify `clientId` to the clientId of the application just added, modify `appName` to the set application name, and modify `organizationName` to the set organization name.
+
+Next, run casnode with docker
 
 ```shell
-export function getSignupUrl() {
-  return `${trim(authConfig.serverUrl)}/signup/${authConfig.appName}`;
-  //return getSigninUrl().replace(
-  // "/login/oauth/authorize",
-  // "/signup/oauth/authorize"
-  //);
-}
-```
-
-Next, you need
-
-```shell
-cd ..
 docker-compose up
 ```
 
