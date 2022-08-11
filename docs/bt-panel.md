@@ -21,15 +21,12 @@ The root user executes the following commands to download and decompress the Go 
 ```shell
 wget -c https://dl.google.com/go/go1.16.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
-Then we need to add Golang to the environment variables,
-`sudo vim /etc/profile`,
-Enter ``i``, add the following code in the last line of the file.
+Then we need to add Golang to the environment variables, edit `/etc/profile`, add the following code in the last line of the file.
 
 ```shell
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 ```
-Press `Esc` and enter `:wq` to save the file and exit.
 
 Then use command `source /etc/profile` to make the newly added environment variables work. 
 
@@ -55,12 +52,13 @@ We first configure Casdoor.
 ```go
 cd casdoor
 go build main.go
-vim conf/app.conf
 ```
-Enter `i`, find
+Then edit `conf/app.conf`, find 
+```
+dataSourceName = root:123@tcp(localhost:3306)/
+```
 
-    dataSourceName = root:123@tcp(localhost:3306)/
-Change MySQL password provided by the BT panel as **123**, then press `Esc`, enter `:wq` to save and exit.
+Change MySQL password provided by the BT panel as **123**.
 ```shell
 cd web
 npm install
@@ -72,7 +70,7 @@ sudo nohup ./main &
 
 Now that Casdoor has been configured, visit http://your-ip:8000 to configure Casnode.  
 
-The default administrator login account is admin/123.
+The default administrator login account is `admin/123`.
 
 Click Organization, then click Add, click Edit for the added organization, and change the name to the organization name you want. Here I set it to casbin-forum, and then click Save.
 
@@ -86,13 +84,11 @@ Click Users, click Add, then click Edit, modify the added user, click Organizati
 Next we configure in Casnode.
 
 ```shell
-sudo su
 cd casnode
 go build main.go
-vim conf/app.conf
 ```
 
-Enter `i` and find
+Edit `conf/app.conf`, find
 
 ```
 dataSourceName = root:123@tcp(localhost:3306)/
@@ -100,12 +96,7 @@ dataSourceName = root:123@tcp(localhost:3306)/
 
 Change MySQL password provided by the BT panel to **123**, then find casdoorEndpoint, modify it to http://your-ip:8000 (Casdoor backend address), find **ClientId** and **ClientSecret**, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to your set. Save and exit.
 
-```shell
-cd web
-vim src/Conf.js
-```
-
-Modify serverUrl to http://your-ip:8000 (Casdoor front-end access address), modify ClientId to the ClientId of the application just added, modify appname to the set application name, and modify the organization to the set organization name. Save and exit.
+Edit `web/src/Conf.js`, modify `serverUrl` to http://your-ip:8000 (Casdoor front-end access address), modify `ClientId` to the ClientId of the application just added, modify `appName` to the set application name, and modify `organizationName` to the set organization name.
 ```shell
 npm install
 npm run build

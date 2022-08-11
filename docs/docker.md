@@ -51,11 +51,7 @@ Edit `conf/app.conf`, modify **dataSourceName = root:123@tcp(localhost:3306)/** 
 
 Then find `casdoorEndpoint`, modify it to `http://your-ip:8000` (Casdoor backend address), find `clientId` and `clientSecret`, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set.
 
-```shell
-cd web
-vim src/Conf.js
-```
-Edit `web/src/Conf.js` , modify `serverUrl` to http://your-ip:8000 (Casdoor front-end access address), modify `clientId` to the clientId of the application just added, modify `appName` to the set application name, and modify the `organizationName` to the set organization name.
+Edit `web/src/Conf.js` , modify `serverUrl` to http://your-ip:8000 (Casdoor front-end access address), modify `clientId` to the clientId of the application just added, modify `appName` to the set application name, and modify `organizationName` to the set organization name.
 
 Next, run casnode with docker
 
