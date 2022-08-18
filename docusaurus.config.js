@@ -15,6 +15,7 @@ module.exports = {
     defaultLocale: 'en',
     locales: ['en', 'zh', 'fr', 'de', 'ko', 'ru', 'ja'],
   },
+  trailingSlash: false,
   themeConfig: {
     algolia: {
       appId: 'D23M79WNKM',
@@ -38,7 +39,7 @@ module.exports = {
           position: 'left',
           label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           label: 'Help',
           to: '/help',
@@ -78,6 +79,10 @@ module.exports = {
           type: 'localeDropdown',
           position: 'right',
           dropdownItemsAfter: [
+            {
+              type: 'html',
+              value: '<hr style="margin: 0.3rem 0;">',
+            },
             {
               to: 'https://crowdin.com/project/casnode-website',
               label: 'Help translate',
@@ -150,7 +155,7 @@ module.exports = {
               `
             },
             {
-                html: `
+              html: `
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -179,7 +184,11 @@ var _hmt = _hmt || [];
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-    hideableSidebar: true,
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    }
   },
   presets: [
     [
@@ -203,7 +212,6 @@ var _hmt = _hmt || [];
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: false,
         },
       },
     ],
