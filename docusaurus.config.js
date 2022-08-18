@@ -218,8 +218,13 @@ var _hmt = _hmt || [];
   ],
   plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
   scripts: [
-    '/js/gitter.js',
-    'https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js',
-    '/js/tawk.js'
+    {
+      src: '/js/gitter.js',
+      async: true,
+    },
+    {
+      src: '/js/tawk.js',
+      async: true,
+    },
   ],
 };
