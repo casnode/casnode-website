@@ -197,14 +197,28 @@ var _hmt = _hmt || [];
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/casnode/casnode-website/tree/master/',
+          editUrl: ({locale, docPath}) => {
+            if (locale === 'en') {
+              return `https://github.com/casnode/casnode-website/edit/master/docs/${docPath}`;
+            }
+            if (locale == 'zh') {
+              return `https://crowdin.com/project/casnode-website/zh-CN`;
+            }
+            return `https://crowdin.com/project/casnode-website/${locale}`;
+          },
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/casnode/casnode-website/tree/master/',
+          editUrl: ({locale, blogDirPath, blogPath}) => {
+            if (locale === 'en') {
+              return `https://github.com/casnode/casnode-website/edit/master/${blogDirPath}/${blogPath}`;
+            }
+            if (locale == 'zh') {
+              return `https://crowdin.com/project/casnode-website/zh-CN`;
+            }
+            return `https://crowdin.com/project/casnode-website/${locale}`;
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

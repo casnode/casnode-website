@@ -106,7 +106,7 @@ The `src/pages/` subdirectory contains the Casnode components that make up the n
 
 ## Translation
 
-[Crowdin](https://crowdin.com/project/casdoor) and [Docusaurus i18n](https://docusaurus.io/docs/i18n/crowdin) is used for Casnode website's translation. You can contribute to the translation of your proficient languages on that.
+[Crowdin](https://crowdin.com/project/casnode-website) and [Docusaurus i18n](https://docusaurus.io/docs/i18n/crowdin) is used for Casnode website's translation. You can contribute to the translation of your proficient languages on that.
 
 ### Build the translation project locally
 

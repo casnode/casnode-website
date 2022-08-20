@@ -34,7 +34,7 @@ Casnode uses [xorm](https://github.com/go-xorm/xorm) to connect to databases. Yo
 
 ## 🌐 Multi-languages
 
-Casnode uses i18next and [Crowdin](https://crowdin.com/project/casnode-web/) to support multi-language. Now Casnode supports Chinese, English, French, German, Russian, Japanese and Korean. Welcome to make a PR or file an issue to support your language! And any translation contribution is welcomed!
+Casnode uses i18next and [Crowdin](https://crowdin.com/project/casnode/) to support multi-language. Now Casnode supports Chinese, English, French, German, Russian, Japanese and Korean. Welcome to make a PR or file an issue to support your language! And any translation contribution is welcomed!
 
 ## 🚪 Use Casdoor to manage members
 
