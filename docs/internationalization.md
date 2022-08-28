@@ -1,5 +1,7 @@
 ---
 title: Internationalization
+description: Help Casnode internationalize
+keywords: [Internationalization]
 ---
 
 Casnode supports multi-languages, by deploying the translations to Crowdin, we support Chinese, French, German, Russian, Japanese and Korean.

@@ -1,12 +1,19 @@
+---
+title: Docker
+description: Install casnode through docker
+keywords: [docker]
+---
+
 :::caution
+
 The tutorial environment is Ubuntu 20.0.4 .  
+
 :::
 
-## Install casnode through docker  
+## Install casnode through docker
 ### Prepare work
 #### Install docker and docker-compose
 Install Docker and Docker-compose, you see [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/)
-<br/>
 
 #### Clone casnode & casdoor
 Next, clone Casdoor and Casndoe from GitHub.    
@@ -15,7 +22,6 @@ git clone https://github.com/casbin/casdoor.git
 git clone https://github.com/casbin/casnode.git
 ```
 Now, you can see two folders, `casnode` and `casdoor`.
-<br/>
 
 ### Configure casdoor
 
@@ -26,10 +32,11 @@ Edit `conf/app.conf`, modify **dataSourceName = root:123@tcp(localhost:3306)/ to
 ```shell
 docker-compose up
 ```
-<br/>
 
 :::tip
+
 mysql and casdoor are in different docker containers.
+
 :::
 
 #### Configure casnode in casdoor

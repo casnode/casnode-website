@@ -1,5 +1,7 @@
 ---
 title: Migration from DiscuzX
+description: Migration from DiscuzX
+keywords: [discuz, discuz!, discuzx]
 ---
 
 Casnode has provided a lot of Go scripts to help users migrate their forums from DiscuzX 3.x to Casnode. The scripts are located at: https://github.com/casbin/casnode/tree/master/discuzx
@@ -20,7 +22,9 @@ You need to prepare the following environments before conducting the migration:
 First configure the Casdoor and Casnode correctly based on the their installation guides, make sure they are working normally before migration.
 
 :::tip
+
 Let Casdoor and Casnode connect to the DB's Intranet URL. Let Casdoor's storage provider's endpoint be the Intranet URL of the cloud object storage. It will be much faster.
+
 :::
 
 Configure the Casdoor database in Casnode's app.conf, so Casnode can directly connect to Casdoor's DB and create users. This will be faster than calling Casdoor's RESTful API to create users.
@@ -45,7 +49,9 @@ var discuzxAttachmentBaseUrl = "https://attachment.discuz.net/forum/"
 ```
 
 :::tip
+
 In Casnode, we assume you use the same DB username and password for all 3 DBs: Casnode's DB, Casdoor's DB and DiscuzX's DB. So make sure this DB user can access all 3 DBs.
+
 :::
 
 ## Migration
@@ -57,7 +63,9 @@ var SyncAvatarsConcurrency = 20
 ```
 
 :::tip
+
 The estimation time we provide in the following sections is measured in a machine with remote Internet connection with the DB and object storage. If your VM is in the same subnet with the DB and object storage, you will be much faster.
+
 :::
 
 ### 1. User migration
