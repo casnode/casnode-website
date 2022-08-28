@@ -1,5 +1,7 @@
 ---
 title: Installation
+description: Getting started with Casnode
+keywords: [installation, configuration, deploy]
 ---
 
 These paragraphs will help you deploy Casnode on your server. If you want to install Casnode by BT Panel or Docker, please see the details at: [BT Panel](./bt-panel.md) and [Docker](./docker.md).
@@ -62,6 +64,7 @@ casdoorDbName = casdoor
 ```
 
 :::tip
+
 Casdoor's `driverName` and `dataSourceName` are the same as casnode by default. If your Casdoor and Casnode are not
 in the same database, you can set up the casdoor database in [casdoor/adapter.go](https://github.com/casbin/casnode/casdoor/adapter.go)
 
@@ -80,6 +83,7 @@ casdoorDataSourceName =
 ```go
 	adapter = NewAdapter(beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDbName"))
 ```
+
 :::
 
 #### Object Storage Service (Casnode uses OSS to store resources):
@@ -232,6 +236,7 @@ npm run start
 Now, Casnode runs its front end at port 3000 and runs it's back end at port 7000. You can modify the code and see what will happen.
 
 :::caution
+
 The front end uses these codes to determine whether it is a dev mode:
 ```js
 export function initServerUrl() {
@@ -242,4 +247,5 @@ export function initServerUrl() {
 }
 ```
 It means if hostname is `localhost`, then you are in dev mode. If not, then you are in productive mode. Port of the back end is not same in dev mode and productive mode, so please do not use `127.0.0.1` instead of `localhost` in your browser in dev mode.
+
 :::

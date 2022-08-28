@@ -44,6 +44,6 @@ module.exports = {
         'server-side-rendering',
       ],
     },
-        'internationalization',
+    'internationalization',
   ],
 };

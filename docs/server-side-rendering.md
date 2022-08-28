@@ -1,5 +1,7 @@
 ---
 title: Server Side Rendering
+description: Server Side Rendering
+keywords: [SSR]
 ---
 
 Casnode support SSR. SSR(Server-side rendering) is a popular technique for rendering a client-side single page application (SPA) on the server and then sending a fully rendered page to the client. 

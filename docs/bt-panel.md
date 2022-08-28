@@ -1,5 +1,13 @@
+---
+title: BT panel
+description: Install Casnode under the Linux BT panel
+keywords: [bt panel]
+---
+
 :::caution
-The tutorial environment is Ubuntu 20.04  
+
+The tutorial environment is Ubuntu 20.04
+
 :::
 
 ## Install Casnode under the Linux BT panel
@@ -12,7 +20,9 @@ After the installation is complete, disconnect from the server or restart the se
 Enter `git --version` to make sure git is , if the prompts Command `git` not found, use `apt-get install git` to install git.  
 
 :::tip
+
 To access the Casnode successfully, you need to open the **7001** and **8000** port.
+
 :::
 
 #### Install Golang
@@ -42,7 +52,6 @@ git clone https://github.com/casbin/casdoor.git
 git clone https://github.com/casbin/casnode.git
 ```
 Now, you can see there are two folders, Casnode and Casdoor.
-<br/>
 
 ### Configure Casdoor
 

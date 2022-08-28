@@ -1,5 +1,7 @@
 ---
 title: Overview
+description: Casnode's architecture
+keywords: [architecture]
 ---
 
 Casnode is an open source project. An active community is its vitality. 

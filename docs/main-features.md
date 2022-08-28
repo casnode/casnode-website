@@ -1,5 +1,7 @@
 ---
 title: Main Features
+description: Casnode main features
+keywords: [features]
 ---
 
 There special features distinguish Casnode from other forums. Here is a short introduction of these features. Read forward for more details.

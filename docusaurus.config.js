@@ -176,7 +176,7 @@ var _hmt = _hmt || [];
       logo: {
         alt: 'Casbin Logo',
         src: 'img/casbin_min.svg',
-        href: 'https://casbin.org/',
+        href: '/',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Casbin contributors.`,
     },
