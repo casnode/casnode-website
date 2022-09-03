@@ -12,38 +12,38 @@
 module.exports = {
   tutorialSidebar: [
     {
-      type: 'category',
-      label: 'Getting Started',
+      type: "category",
+      label: "Getting Started",
       collapsed: false,
       items: [
-        'overview',
-        'main-features',
-        'installation',
-        'bt-panel',
-        'docker',
-        'migration',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'API reference',
-      collapsed: false,
-      items: [
-        'api-overview',
+        "overview",
+        "main-features",
+        "installation",
+        "bt-panel",
+        "docker",
+        "migration",
       ],
     },
     {
-      type: 'category',
-      label: 'Architecture',
+      type: "category",
+      label: "API reference",
       collapsed: false,
       items: [
-        'architecture-overview',
-        'main-package',
-        'routers',
-        'controllers',
-        'server-side-rendering',
+        "api-overview",
       ],
     },
-    'internationalization',
+    {
+      type: "category",
+      label: "Architecture",
+      collapsed: false,
+      items: [
+        "architecture-overview",
+        "main-package",
+        "routers",
+        "controllers",
+        "server-side-rendering",
+      ],
+    },
+    "internationalization",
   ],
 };

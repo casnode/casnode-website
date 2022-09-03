@@ -1,17 +1,17 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
-import Translate, {translate} from '@docusaurus/Translate';
+import React from "react";
+import clsx from "clsx";
+import styles from "./HomepageFeatures.module.css";
+import Translate, {translate} from "@docusaurus/Translate";
 
 const FeatureList = [
   {
     title: translate({
-          message: 'Easy to Use',
+      message: "Easy to Use",
     }),
-    Svg: require('../../static/img/model.svg').default,
+    Svg: require("../../static/img/model.svg").default,
     description: (
       <>
-      <Translate>
+        <Translate>
         Only few steps to setup Casnode!
         </Translate>
       </>
@@ -19,12 +19,12 @@ const FeatureList = [
   },
   {
     title: translate({
-          message: 'All kinds of DB and OSS',
+      message: "All kinds of DB and OSS",
     }),
-    Svg: require('../../static/img/storage.svg').default,
+    Svg: require("../../static/img/storage.svg").default,
     description: (
       <>
-      <Translate>
+        <Translate>
         Casnode supports many kinds of Databases and OSS provider. And you can add your own providers easily!
         </Translate>
       </>
@@ -32,14 +32,14 @@ const FeatureList = [
   },
   {
     title: translate({
-          message: 'Multi-Language Support',
+      message: "Multi-Language Support",
     }),
-    Svg: require('../../static/img/language.svg').default,
+    Svg: require("../../static/img/language.svg").default,
     description: (
       <>
-      <Translate>
+        <Translate>
       Now, Casnode supports Chinese and English UI. We use i18n to support multi-lang, so you can make a PR or an issue to support your language!
-      </Translate>
+        </Translate>
       </>
     ),
   },
@@ -47,7 +47,7 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <Svg className={styles.featureSvg} alt={title} />
       </div>

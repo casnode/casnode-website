@@ -5,8 +5,8 @@
  * and scoped locally.
  */
 
- $ifm-bg: var(--ifm-color-background-100);
- $ifm-radius: var(--ifm-global-radius);
+$ifm-bg: var(--ifm-color-background-100);
+$ifm-radius: var(--ifm-global-radius);
 
 .heroBanner {
   padding: 4rem 0;
@@ -35,13 +35,13 @@
   margin-right: 5rem;
   box-shadow: 0 0 40px black;
 
-    BrowserWindow {
-      background-color: $ifm-bg;
-      border-radius: $ifm-radius;
-      border: 0;
-      height: 450px;
-      width: 870px;
-    }
+  .BrowserWindow {
+    background-color: $ifm-bg;
+    border-radius: $ifm-radius;
+    border: 0;
+    height: 450px;
+    width: 870px;
+  }
 }
 
 .hearderwindow {
@@ -61,7 +61,10 @@
 }
 
 .logincontent {
-  @extend .languagecontent;
+  padding: 60px 0;
+  font-size: 1.3rem;
+  justify-content: center;
+  line-height: 40px;
   background-color: var(--ifm-color-emphasis-100);
 }
 
@@ -76,13 +79,13 @@
   box-shadow: 0 0 40px grey;
   transform: scale(0.8);
 
-    BrowserWindow {
-      background-color: $ifm-bg;
-      border-radius: $ifm-radius;
-      border: 0;
-      height: 720px;
-      width: 870px;
-    }
+  .BrowserWindow {
+    background-color: $ifm-bg;
+    border-radius: $ifm-radius;
+    border: 0;
+    height: 720px;
+    width: 870px;
+  }
 }
 
 .loginiframediv {
@@ -100,8 +103,6 @@
   background-color: $ifm-bg;
 }
 
-
-
 .languagecontent {
   padding: 60px 0;
   font-size: 1.3rem;
@@ -116,13 +117,13 @@
   background-color: $ifm-bg;
   box-shadow: 0 0 40px grey;
 
-    BrowserWindow {
-      background-color: $ifm-bg;
-      border-radius: $ifm-radius;
-      border: 0;
-      height: 450px;
-      width: 870px;
-    }
+  .BrowserWindow {
+    background-color: $ifm-bg;
+    border-radius: $ifm-radius;
+    border: 0;
+    height: 450px;
+    width: 870px;
+  }
 }
 
 .languageiframediv {
