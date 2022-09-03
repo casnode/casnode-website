@@ -1,136 +1,136 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Casnode · A beautiful and simple next-generation forum software based on Go and React',
-  url: 'https://casnode.org',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'casnode', // Usually your GitHub org/user name.
-  projectName: 'casnode-website', // Usually your repo name.
+  title: "Casnode · A beautiful and simple next-generation forum software based on Go and React",
+  url: "https://casnode.org",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "casnode", // Usually your GitHub org/user name.
+  projectName: "casnode-website", // Usually your repo name.
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh', 'fr', 'de', 'ko', 'ru', 'ja'],
+    defaultLocale: "en",
+    locales: ["en", "zh", "fr", "de", "ko", "ru", "ja"],
   },
   trailingSlash: false,
   themeConfig: {
     algolia: {
-      appId: 'D23M79WNKM',
-      apiKey: '608237dde484891d17f2c8b31f37f6d9',
-      indexName: 'casnode',
+      appId: "D23M79WNKM",
+      apiKey: "608237dde484891d17f2c8b31f37f6d9",
+      indexName: "casnode",
       contextualSearch: true,
     },
     hotjar: {
-      applicationId: '2775554',
+      applicationId: "2775554",
     },
     navbar: {
-      title: 'Casnode',
+      title: "Casnode",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/casbin.svg',
+        alt: "My Site Logo",
+        src: "img/casbin.svg",
       },
       items: [
         {
-          type: 'doc',
-          docId: 'overview',
-          position: 'left',
-          label: 'Docs',
+          type: "doc",
+          docId: "overview",
+          position: "left",
+          label: "Docs",
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        {to: "/blog", label: "Blog", position: "left"},
         {
-          label: 'Help',
-          to: '/help',
-          position: 'left',
-        },
-        {
-          href: 'https://forum.casbin.com/swagger/',
-          label: 'API',
-          position: 'left',
+          label: "Help",
+          to: "/help",
+          position: "left",
         },
         {
-          href: 'https://forum.casbin.com/',
-          label: 'Online Demo',
-          position: 'left',
+          href: "https://forum.casbin.com/swagger/",
+          label: "API",
+          position: "left",
         },
         {
-          href: 'https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi',
-          label: 'QQ Group',
-          position: 'left',
+          href: "https://forum.casbin.com/",
+          label: "Online Demo",
+          position: "left",
         },
         {
-          href: 'https://gitter.im/casbin/casnode',
-          label: 'Gitter',
-          position: 'left',
+          href: "https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi",
+          label: "QQ Group",
+          position: "left",
         },
         {
-          label: 'Pricing & Sales',
-          to: 'https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa',
-          position: 'left',
+          href: "https://gitter.im/casbin/casnode",
+          label: "Gitter",
+          position: "left",
         },
         {
-          label: 'Contact',
-          to: 'https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa',
-          position: 'left',
+          label: "Pricing & Sales",
+          to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
+          position: "left",
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          label: "Contact",
+          to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
+          position: "left",
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
           dropdownItemsAfter: [
             {
-              type: 'html',
-              value: '<hr style="margin: 0.3rem 0;">',
+              type: "html",
+              value: "<hr style=\"margin: 0.3rem 0;\">",
             },
             {
-              to: 'https://crowdin.com/project/casnode-website',
-              label: 'Help translate',
+              to: "https://crowdin.com/project/casnode-website",
+              label: "Help translate",
             },
           ],
         },
         {
-          href: 'https://github.com/casbin/casnode',
-          position: 'right',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          href: "https://github.com/casbin/casnode",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Overview',
-              to: '/docs/overview',
+              label: "Overview",
+              to: "/docs/overview",
             },
             {
-              label: 'Get Started',
-              to: '/docs/installation',
+              label: "Get Started",
+              to: "/docs/installation",
             },
             {
-              label: 'Casnode API',
-              href: 'https://forum.casbin.com/swagger/'
+              label: "Casnode API",
+              href: "https://forum.casbin.com/swagger/",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/casnode',
+              label: "GitHub",
+              href: "https://github.com/casnode",
             },
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/search?q=casnode',
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/search?q=casnode",
             },
             {
-              label: 'Gitter',
-              href: 'https://gitter.im/casbin/casnode',
+              label: "Gitter",
+              href: "https://gitter.im/casbin/casnode",
             },
             {
               label: "QQ Group",
@@ -139,20 +139,20 @@ module.exports = {
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/casbin/casnode',
+              label: "GitHub",
+              href: "https://github.com/casbin/casnode",
             },
             {
               html: `
               <iframe src="https://ghbtns.com/github-btn.html?user=casbin&repo=casnode&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub">Casdoor</iframe>
-              `
+              `,
             },
             {
               html: `
@@ -165,18 +165,18 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-`
+`,
             },
             {
-              html: `<div class="placeholderads"></div>`
-            }
+              html: "<div class=\"placeholderads\"></div>",
+            },
           ],
         },
       ],
       logo: {
-        alt: 'Casbin Logo',
-        src: 'img/casbin_min.svg',
-        href: '/',
+        alt: "Casbin Logo",
+        src: "img/casbin_min.svg",
+        href: "/",
       },
       copyright: `Copyright © ${new Date().getFullYear()} Casbin contributors.`,
     },
@@ -188,21 +188,21 @@ var _hmt = _hmt || [];
       sidebar: {
         hideable: true,
       },
-    }
+    },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl: ({locale, docPath}) => {
-            if (locale === 'en') {
+            if (locale === "en") {
               return `https://github.com/casnode/casnode-website/edit/master/docs/${docPath}`;
             }
-            if (locale == 'zh') {
-              return `https://crowdin.com/project/casnode-website/zh-CN`;
+            if (locale === "zh") {
+              return "https://crowdin.com/project/casnode-website/zh-CN";
             }
             return `https://crowdin.com/project/casnode-website/${locale}`;
           },
@@ -211,33 +211,33 @@ var _hmt = _hmt || [];
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: ({locale, blogDirPath, blogPath}) => {
-            if (locale === 'en') {
+            if (locale === "en") {
               return `https://github.com/casnode/casnode-website/edit/master/${blogDirPath}/${blogPath}`;
             }
-            if (locale == 'zh') {
-              return `https://crowdin.com/project/casnode-website/zh-CN`;
+            if (locale === "zh") {
+              return "https://crowdin.com/project/casnode-website/zh-CN";
             }
             return `https://crowdin.com/project/casnode-website/${locale}`;
           },
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
         },
       },
     ],
   ],
-  plugins: ['docusaurus-plugin-sass', 'docusaurus-plugin-hotjar'],
+  plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-hotjar"],
   scripts: [
     {
-      src: '/js/gitter.js',
+      src: "/js/gitter.js",
       async: true,
     },
     {
-      src: '/js/tawk.js',
+      src: "/js/tawk.js",
       async: true,
     },
   ],
