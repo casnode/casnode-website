@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 import HomepageFeatures from "../components/HomepageFeatures";
 import BrowserWindow from "../components/BrowserWindow";
 import Translate from "@docusaurus/Translate";
+import CasdoorCard from "../components/CasdoorCard";
 
 function HomepageHeader() {
   return (
@@ -56,7 +57,7 @@ function LoginContent() {
           <div className={styles.loginwindow}>
             <BrowserWindow url="https://forum.casbin.com">
               <div className={styles.loginiframediv}>
-                <iframe className={styles.loginiframe} src="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum" width="870px" height="720px" scrolling="no" frameBorder="0"></iframe>
+                <CasdoorCard width="870px" height="720px" src="login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum" />
               </div>
             </BrowserWindow>
           </div>
