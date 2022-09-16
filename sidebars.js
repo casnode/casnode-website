@@ -14,7 +14,7 @@ module.exports = {
     {
       type: "category",
       label: "Getting Started",
-      collapsed: false,
+      link: {type: "generated-index"},
       items: [
         "overview",
         "main-features",
@@ -27,7 +27,7 @@ module.exports = {
     {
       type: "category",
       label: "API reference",
-      collapsed: false,
+      link: {type: "generated-index"},
       items: [
         "api-overview",
       ],
@@ -35,7 +35,7 @@ module.exports = {
     {
       type: "category",
       label: "Architecture",
-      collapsed: false,
+      link: {type: "generated-index"},
       items: [
         "architecture-overview",
         "main-package",
