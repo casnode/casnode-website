@@ -6,7 +6,7 @@ import styles from "./index.module.scss";
 import HomepageFeatures from "../components/HomepageFeatures";
 import BrowserWindow from "../components/BrowserWindow";
 import Translate from "@docusaurus/Translate";
-import CasdoorCard from "../components/CasdoorCard";
+import CasnodeCard from "../components/CasnodeCard";
 
 function HomepageHeader() {
   return (
@@ -32,9 +32,9 @@ function HomepageHeader() {
         </div>
       </div>
       <div className={styles.casnodewindow}>
-        <BrowserWindow url="https://forum.casbin.com">
+        <BrowserWindow>
           <div className={styles.headeriframe}>
-            <iframe className="headerwindow" src="https://forum.casbin.com" width="870px" height="450px" frameBorder="0"></iframe>
+            <CasnodeCard int="https://forum.casbin.org" cn="https://forum.casbin.com" scrolling="yes" />
           </div>
         </BrowserWindow>
       </div>
@@ -55,9 +55,12 @@ function LoginContent() {
             </Translate>
           </div>
           <div className={styles.loginwindow}>
-            <BrowserWindow url="https://forum.casbin.com">
+            <BrowserWindow>
               <div className={styles.loginiframediv}>
-                <CasdoorCard width="870px" height="720px" src="login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum" />
+                <CasnodeCard width="870px" height="720px"
+                  int="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https%3A%2F%2Fforum.casbin.org%2Fcallback&scope=read&state=app-casnode"
+                  cn="https://door.casbin.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum"
+                />
               </div>
             </BrowserWindow>
           </div>
@@ -73,9 +76,12 @@ function LanguageContent() {
       <div className="container text--center">
         <div className="row">
           <div className={styles.languagewindow}>
-            <BrowserWindow url="https://forum.casbin.com">
+            <BrowserWindow>
               <div className={styles.languageiframediv}>
-                <iframe className={styles.languageiframe} src="https://forum.casbin.com/select/language" width="870px" height="450px" scrolling="no" frameBorder="0"></iframe>
+                <CasnodeCard
+                  int="https://forum.casbin.org/select/language"
+                  cn="https://forum.casbin.com/select/language"
+                />
               </div>
             </BrowserWindow>
           </div>

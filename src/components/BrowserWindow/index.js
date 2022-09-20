@@ -1,8 +1,15 @@
-import React from "react";
-
+import React, {useEffect, useState} from "react";
 import styles from "./styles.module.css";
 
-function BrowserWindow({children, minHeight, url}) {
+function BrowserWindow({children, minHeight}) {
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    if(localStorage.getItem("mainland") === true) {
+      setUrl("https://forum.casbin.com");
+    }else{
+      setUrl("https://forum.casbin.org");
+    }
+  });
   return (
     <div className={styles.browserWindow} style={{minHeight}}>
       <div className={styles.browserWindowHeader}>

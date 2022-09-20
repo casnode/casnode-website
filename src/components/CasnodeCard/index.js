@@ -4,27 +4,27 @@ export default function CasdoorCard(props) {
   const [link, setLink] = useState(null);
 
   useEffect(() => {
-    if(localStorage.getItem("mainland") === true) {
-      setLink("https://door.casdoor.com/");
+    if(localStorage.getItem("mainland") === "true") {
+      setLink(props.cn);
     }else{
-      setLink("https://door.casdoor.org/");
+      setLink(props.int);
     }
   }, []);
 
   return (
     <iframe
-      src={link + props.src}
+      src={link}
       width={props.width}
       height={props.height}
-      style={{borderRadius: "20px"}}
       frameBorder="0"
-      scrolling="no"
+      scrolling={props.scrolling}
     ></iframe>
   );
 }
 
 CasdoorCard.defaultProps = {
   src: "",
-  width: "600",
-  height: "700",
+  width: "870",
+  height: "450",
+  scrolling: "no",
 };
