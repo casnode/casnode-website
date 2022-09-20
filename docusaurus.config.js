@@ -51,21 +51,6 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://forum.casbin.com/",
-          label: "Online Demo",
-          position: "left",
-        },
-        {
-          href: "https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi",
-          label: "QQ Group",
-          position: "left",
-        },
-        {
-          href: "https://gitter.im/casbin/casnode",
-          label: "Gitter",
-          position: "left",
-        },
-        {
           label: "Pricing & Sales",
           to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
           position: "left",
@@ -94,6 +79,28 @@ module.exports = {
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
+        },
+        {
+          type: "custom-casnode",
+          src: "",
+          position: "right",
+          className: "navbar__item navbar__link header-community-link",
+        },
+        {
+          type: "search",
+          position: "right",
+        },
+        {
+          label: "Sign Up",
+          href: "https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https%3A%2F%2Fforum.casbin.com%2Fcallback&scope=read&state=app-casnode",
+          position: "right",
+          className: "casnode-signup casnode-link",
+        },
+        {
+          label: "Login",
+          href: "https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https%3A%2F%2Fforum.casbin.com%2Fcallback&scope=read&state=app-casnode",
+          position: "right",
+          className: "casnode-login casnode-link",
         },
       ],
     },
@@ -196,6 +203,8 @@ var _hmt = _hmt || [];
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           // Please change this to your repo.
           editUrl: ({locale, docPath}) => {
             if (locale === "en") {
@@ -232,6 +241,10 @@ var _hmt = _hmt || [];
   ],
   plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-hotjar"],
   scripts: [
+    {
+      src: "/js/isMainland.js",
+      async: false,
+    },
     {
       src: "/js/gitter.js",
       async: true,

@@ -1,17 +1,14 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 
 export default function CasdoorCard(props) {
   const [link, setLink] = useState(null);
 
   useEffect(() => {
-    axios.get("https://oa.casbin.com/api/is-mainland-ip").then((response) => {
-      if (response.data === true) {
-        setLink("https://door.casdoor.com/");
-      } else {
-        setLink("https://door.casdoor.org/");
-      }
-    });
+    if(localStorage.getItem("mainland") === true) {
+      setLink("https://door.casdoor.com/");
+    }else{
+      setLink("https://door.casdoor.org/");
+    }
   }, []);
 
   return (

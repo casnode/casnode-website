@@ -1,14 +1,15 @@
 import React from "react";
 import clsx from "clsx";
-import styles from "./HomepageFeatures.module.css";
+import styles from "./styles.module.css";
 import Translate, {translate} from "@docusaurus/Translate";
+import {useColorMode} from "@docusaurus/theme-common";
 
 const FeatureList = [
   {
     title: translate({
       message: "Easy to Use",
     }),
-    Svg: require("../../static/img/model.svg").default,
+    path: "/img/model",
     description: (
       <>
         <Translate>
@@ -21,7 +22,7 @@ const FeatureList = [
     title: translate({
       message: "All kinds of DB and OSS",
     }),
-    Svg: require("../../static/img/storage.svg").default,
+    path: "/img/storage",
     description: (
       <>
         <Translate>
@@ -34,7 +35,7 @@ const FeatureList = [
     title: translate({
       message: "Multi-Language Support",
     }),
-    Svg: require("../../static/img/language.svg").default,
+    path: "/img/language",
     description: (
       <>
         <Translate>
@@ -45,11 +46,12 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({title, path, description}) {
+  const {colorMode} = useColorMode();
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        <img src={colorMode === "light" ? path + ".png" : path + "-dark.png"} className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
