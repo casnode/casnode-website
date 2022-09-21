@@ -82,8 +82,8 @@ module.exports = {
         },
         {
           type: "custom-item",
-          int: "https://gitter.im/casbin/casdoor",
-          cn: "https://qm.qq.com/cgi-bin/qm/qr?k=SCBnKNj_1ljeXFT2dk8cwoGQwc5lFy8l&jump_from=webapi",
+          int: "https://gitter.im/casbin/casnode",
+          cn: "https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi",
           position: "right",
           className: "navbar__item navbar__link header-community-link",
         },
