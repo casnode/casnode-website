@@ -50,16 +50,16 @@ module.exports = {
           label: "API",
           position: "left",
         },
-        {
-          label: "Pricing & Sales",
-          to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
-          position: "left",
-        },
-        {
-          label: "Contact",
-          to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
-          position: "left",
-        },
+        // {
+        //   label: "Pricing & Sales",
+        //   to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
+        //   position: "left",
+        // },
+        // {
+        //   label: "Contact",
+        //   to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
+        //   position: "left",
+        // },
         {
           type: "localeDropdown",
           position: "right",
