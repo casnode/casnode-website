@@ -27,6 +27,7 @@ $ifm-radius: var(--ifm-global-radius);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .casnodewindow {
