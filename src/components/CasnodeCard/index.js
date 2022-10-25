@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from "react";
 
 export default function CasdoorCard(props) {
-  const [link, setLink] = useState(null);
+  const [link, setLink] = useState(props.int);
 
   useEffect(() => {
     if(localStorage.getItem("mainland") === "true") {
       setLink(props.cn);
-    }else{
-      setLink(props.int);
     }
   }, []);
 
