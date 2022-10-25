@@ -2,12 +2,10 @@ import React, {useEffect, useState} from "react";
 import styles from "./styles.module.css";
 
 function BrowserWindow({children, minHeight}) {
-  const [url, setUrl] = useState(null);
+  const [url, setUrl] = useState("https://forum.casbin.org");
   useEffect(() => {
     if(localStorage.getItem("mainland") === true) {
       setUrl("https://forum.casbin.com");
-    }else{
-      setUrl("https://forum.casbin.org");
     }
   });
   return (
