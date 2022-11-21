@@ -22,6 +22,11 @@ module.exports = {
         "bt-panel",
         "docker",
         "migration",
+        {
+          type: "link",
+          label: "PDF Download",
+          href: "/pdf",
+        },
       ],
     },
     {
