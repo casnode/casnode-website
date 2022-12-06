@@ -2,6 +2,7 @@
 title: Routers
 description: Filters in Casnode
 keywords: [routers, filter]
+authors: [kininaru]
 ---
 
 Actually, `routers` is a built-in package of Beego. `routers.init()` is run by the framework when program starts. However, we added some filter functions to the package.

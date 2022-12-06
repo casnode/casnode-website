@@ -205,8 +205,6 @@ var _hmt = _hmt || [];
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
           // Please change this to your repo.
           editUrl: ({locale, docPath}) => {
             if (locale === "en") {

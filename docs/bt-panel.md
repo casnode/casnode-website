@@ -2,6 +2,7 @@
 title: BT panel
 description: Install Casnode under the Linux BT panel
 keywords: [bt panel]
+authors: [oranges-eating]
 ---
 
 :::caution

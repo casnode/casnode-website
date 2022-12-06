@@ -2,6 +2,7 @@
 title: Overview
 description: Casnode's architecture
 keywords: [architecture]
+authors: [kininaru]
 ---
 
 Casnode is an open source project. An active community is its vitality. 

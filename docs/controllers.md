@@ -2,6 +2,7 @@
 title: Controllers
 description: Use controllers to handle requests
 keywords: [handler, controllers, request]
+authors: [kininaru]
 ---
 
 In `routers/router.go`, you can find lots of lines like 
