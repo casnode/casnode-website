@@ -2,6 +2,7 @@
 title: Docker
 description: Install casnode through docker
 keywords: [docker]
+authors: [oranges-eating]
 ---
 
 :::caution

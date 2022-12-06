@@ -2,6 +2,7 @@
 title: Main package
 description: Casnode main packages
 keywords: [main]
+authors: [kininaru]
 ---
 
 There are several packages in the backend of Casnode. The main function and the Beego framework call these packages when the program starts.

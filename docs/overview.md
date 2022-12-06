@@ -2,6 +2,7 @@
 title: Overview
 description: Introduction to Casnode
 keywords: [overview, introduction]
+authors: [kininaru]
 ---
 
 Casnode is a forum developed by [Casbin community](https://casbin.io/). The detailed architecture:
