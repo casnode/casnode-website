@@ -37,7 +37,7 @@ function HomepageHeader() {
         <div className={styles.casnodewindow}>
           <BrowserWindow>
             <div className={styles.headeriframe}>
-              <CasnodeCard int="https://forum.casbin.org" cn="https://forum.casbin.com" scrolling="yes" />
+              <CasnodeCard src="https://forum.casbin.com" scrolling="yes" />
             </div>
           </BrowserWindow>
         </div>
@@ -65,8 +65,7 @@ function LoginContent() {
               <BrowserWindow>
                 <div className={styles.loginiframediv}>
                   <CasnodeCard width="870px" height="720px"
-                    int="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https%3A%2F%2Fforum.casbin.org%2Fcallback&scope=read&state=app-casnode"
-                    cn="https://door.casbin.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum"
+                    src="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum"
                   />
                 </div>
               </BrowserWindow>
@@ -90,8 +89,7 @@ function LanguageContent() {
               <BrowserWindow>
                 <div className={styles.languageiframediv}>
                   <CasnodeCard
-                    int="https://forum.casbin.org/select/language"
-                    cn="https://forum.casbin.com/select/language"
+                    src="https://forum.casbin.com/select/language"
                   />
                 </div>
               </BrowserWindow>

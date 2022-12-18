@@ -1,17 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
-export default function CasdoorCard(props) {
-  const [link, setLink] = useState(props.int);
-
-  useEffect(() => {
-    if(localStorage.getItem("mainland") === "true") {
-      setLink(props.cn);
-    }
-  }, []);
+export default function CasnodeCard(props) {
 
   return (
     <iframe
-      src={link}
+      src={props.src}
       width={props.width}
       height={props.height}
       frameBorder="0"
@@ -20,8 +13,8 @@ export default function CasdoorCard(props) {
   );
 }
 
-CasdoorCard.defaultProps = {
-  src: "",
+CasnodeCard.defaultProps = {
+  src: "https://forum.casbin.com",
   width: "870",
   height: "450",
   scrolling: "no",
