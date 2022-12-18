@@ -23,6 +23,11 @@ module.exports = {
       indexName: "casnode",
       contextualSearch: true,
     },
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
     hotjar: {
       applicationId: "2775554",
     },
