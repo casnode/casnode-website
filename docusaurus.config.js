@@ -44,27 +44,31 @@ module.exports = {
           position: "left",
           label: "Docs",
         },
-        {to: "/blog", label: "Blog", position: "left"},
+        {
+          href: "https://forum.casbin.com/swagger/",
+          label: "RESTful API",
+          position: "left",
+        },
+        {
+          label: "Blog",
+          to: "/blog",
+          position: "left",
+        },
         {
           label: "Help",
           to: "/help",
           position: "left",
         },
         {
-          href: "https://forum.casbin.com/swagger/",
-          label: "API",
+          href: "https://casbin.com",
+          label: "For Enterprise",
           position: "left",
         },
-        // {
-        //   label: "Pricing & Sales",
-        //   to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
-        //   position: "left",
-        // },
-        // {
-        //   label: "Contact",
-        //   to: "https://tawk.to/chat/623355d51ffac05b1d7f1820/1fuc8ejfa",
-        //   position: "left",
-        // },
+        {
+          href: "https://casdoor.com",
+          label: "Hosting Plan (SaaS)",
+          position: "left",
+        },
         {
           type: "localeDropdown",
           position: "right",
@@ -96,14 +100,14 @@ module.exports = {
         {
           type: "custom-casdoor",
           label: "Sign Up",
-          src: "https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https%3A%2F%2Fforum.casbin.com%2Fcallback&scope=read&state=app-casnode",
+          src: "https://casdoor.com",
           position: "right",
           className: "casdoor-signup casdoor-link",
         },
         {
           type: "custom-casdoor",
           label: "Login",
-          src: "https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https%3A%2F%2Fforum.casbin.com%2Fcallback&scope=read&state=app-casnode",
+          src: "https://casdoor.com",
           position: "right",
           className: "casdoor-login casdoor-link",
         },
