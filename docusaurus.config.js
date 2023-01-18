@@ -145,8 +145,8 @@ module.exports = {
               href: "https://stackoverflow.com/search?q=casnode",
             },
             {
-              label: "Gitter",
-              href: "https://gitter.im/casbin/casnode",
+              label: "Discord",
+              href: "https://discord.gg/4eZa7dMurk",
             },
             {
               label: "QQ Group",
@@ -250,10 +250,6 @@ var _hmt = _hmt || [];
   scripts: [
     {
       src: "/js/isMainland.js",
-      async: true,
-    },
-    {
-      src: "/js/gitter.js",
       async: true,
     },
     {
