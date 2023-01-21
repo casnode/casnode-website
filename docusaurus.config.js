@@ -29,7 +29,7 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     hotjar: {
-      applicationId: "2775554",
+      applicationId: "3332322",
     },
     navbar: {
       title: "Casnode",
