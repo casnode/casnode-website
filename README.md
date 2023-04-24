@@ -2,7 +2,7 @@
 
 The configuration and documentation of Casnode website: <https://casnode.org/>.
 
-Casnode website is built using [Docusaurus](https://docusaurus.io/), you can get the PDF at [Release](https://github.com/casnode/casnode-website/releases/tag/pdf).
+Casnode website is built using [Docusaurus](https://docusaurus.io/), you can get the PDF at [casnode.org/pdf](https://casnode.org/pdf) or [GitHub Action](https://github.com/casnode/casnode-website/actions/workflows/master.yml).
 
 ## Get Started
 
