@@ -1,0 +1,249 @@
+---
+title: Installation
+description: Getting started with Casnode
+keywords:
+  - installation
+  - configuration
+  - deploy
+authors:
+  - kininaru
+---
+
+Diese Absätze werden Ihnen helfen, Casnode auf Ihrem Server zu installieren. Wenn Sie Casnode über BT Panel oder Docker installieren möchten, lesen Sie bitte die Details unter: [BT Panel](./bt-panel.md) und [Docker](./docker.md).
+
+Bitte klonen Sie Casnode zuerst:
+```bash
+git clone https://github.com/casbin/casnode
+```
+und folgen Sie diesen Schritten, um ganz einfach Ihr eigenes Forum einzurichten!
+
+## Produktionsumgebung
+
+### 1. Casdoor einrichten
+
+Kasnode verwendet [Casdoor](https://github.com/casbin/casdoor) um Mitglieder zu verwalten. Daher müssen Sie eine Organisation und eine Bewerbung für Casnode in einer Casdoer-Instanz erstellen.
+
+Folge diesen Schritten, um Casdoor für Casnode einzurichten:
+- Navigiere zur Kasse (Klicke [hier](https://casdoor.org/docs/overview) für Details zu Casdoor)
+- Bei der Organisation "eingebaut" anmelden
+- Klicke **Organisationen** in der oberen Leiste
+- **Hinzufügen Schaltfläche**
+- Denken Sie an den Namen der Organisation, hier verwende ich **Casbin-forum** als Name meiner Organisation: ![organisation](/img/installation/organization.png)
+
+- **Anwendungen** in der oberen Leiste anklicken
+- **Hinzufügen Schaltfläche**
+- Name der Anwendung merken - hier benutze ich das Forum als Name meiner Anwendung:
+- **Bearbeiten**
+
+![anwendung](/img/installation/application.png)
+
+- Wählen Sie die Organisation aus, die Sie gerade erstellt haben
+
+![wählen](/img/installation/chooseorganization.png)
+- Ändern Sie die Umleitungs-URLs zur Forum-URL. Wenn Sie sich in einer sich entwickelnden Umgebung befinden, lautet Ihre Umleitungs-URL **http://localhost:3000/callback**. Wenn Sie sich in einer Produktionsumgebung befinden, lautet Ihre Umleitungs-URL **http://yourip:7000/callback**
+
+![umleitungen](/img/installation/redirecturls.png)
+- Klicken Sie auf **Speichern** und merken Sie sich die `Client ID` und `Client Secret`
+
+![klient](/img/installation/client.png)
+
+### 2. `conf/app.conf ändern`
+
+Hier ist eine Erklärung für die Konfigurations-Elemente:
+
+#### Database connection:
+
+#### Casnode database
+
+```ini {2}
+driverName = mysql
+dataSourceName = root:123@tcp(localhost:3306)/
+dbName = casnode
+```
+
+#### Casdoor database
+
+```ini
+casdoorDbName = casdoor
+```
+
+:::tip
+
+Casdoor's `driverName` and `dataSourceName` are the same as casnode by default. If your Casdoor and Casnode are not in the same database, you can set up the casdoor database in [casdoor/adapter.go](https://github.com/casbin/casnode/casdoor/adapter.go)
+
+Here we provide an example:
+
+1. Add casdoor configuration in `conf/app.conf`:
+
+```ini
+casdoorDriverName =
+casdoorDataSourceName =
+```
+
+2. Modify the `func InitCasdoorAdapter()`:
+
+
+```go
+    adapter = NewAdapter(beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDbName"))
+```
+
+:::
+
+#### Object Storage Service (Casnode uses OSS to store resources):
+
+```ini
+OSSProvider = ""
+accessKeyID     = ""
+accessKeySecret = ""
+OSSCustomDomain = ""
+OSSBasicPath = ""
+OSSRegion = ""
+OSSEndPoint = ""
+OSSBucket = ""
+```
+
+If you can not access Google in normal ways, you need to set up a http proxy here:
+
+```ini
+httpProxy = "127.0.0.1:10808"
+```
+
+#### Casdoor config:
+
+```ini {2,5,8,13}
+# Your Casdoor endpoint in step 1
+casdoorEndpoint = http://localhost:8000
+
+# Client ID you copied in step 1
+clientId = xxx
+
+# Client Secret you copied in step 1
+clientSecret = xxx
+
+jwtSecret = CasdoorSecret
+
+# Organization name in step 1
+casdoorOrganization = "casbin-forum"
+```
+
+### 3. `web/src/Conf.js ändern`
+
+```js {3,6,9,12}
+export const AuthConfig = {
+  // Your Casdoor endpoint in step 1
+  serverUrl: "http://localhost:7001",
+
+  // Client ID you copied in step 1
+  clientId: "014ae4bd048734ca2dea",
+
+  // Application name you copied in step 1
+  appName: "app-casbin-forum",
+
+  // Organization name you copied in step 1
+  organizationName: "casbin-forum",
+};
+```
+
+### 4. Frontend erstellen
+
+In folder `web`, run the following commands:
+
+````mdx-code-block
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn', },
+    { label: 'npm', value: 'npm', },
+  ]
+}>
+
+<TabItem value="yarn">
+
+```bash
+yarn install && yarn run build
+```
+
+</TabItem>
+
+<TabItem value="npm">
+
+```bash
+npm install && npm run build
+```
+</TabItem>
+
+</Tabs>
+
+````
+### 5. Backend erstellen
+In repository root, run:
+```shell
+go build
+./casnode
+```
+
+Then the Casnode app should run on port 7000. You can setup a nginx proxy pass to manage SSL or something else.
+
+For most of site owners who want to develop a forum using Casnode, steps above is enough. But if you are a developer, want to contribute to Casnode, or modify the code to suit your own environment, then you can run Casnode in the developing mode. Please follow these steps to start developing mode:
+
+## Entwickler-Umgebung
+
+### 1. Schritt 1-3 oben machen
+
+### 4. Backend ausführen
+
+```go
+go run main.go
+```
+### 5. Frontend ausführen
+
+In `web` folder:
+
+````mdx-code-block
+
+<Tabs
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn', },
+    { label: 'npm', value: 'npm', },
+  ]
+}>
+
+<TabItem value="yarn">
+
+```bash
+yarn install
+yarn run start
+```
+
+</TabItem>
+
+<TabItem value="npm">
+
+```bash
+npm install
+npm run start
+```
+</TabItem>
+
+</Tabs>
+
+````
+Now, Casnode runs its front end at port 3000 and runs it's back end at port 7000. You can modify the code and see what will happen.
+:::caution
+The front end uses these codes to determine whether it is a dev mode:
+```js
+export function initServerUrl() {
+  const hostname = window.location.hostname;
+  if (hostname === "localhost") {
+    ServerUrl = `http://${hostname}:7000`;
+  }
+}
+```
+It means if hostname is `localhost`, then you are in dev mode. If not, then you are in productive mode. Port of the back end is not same in dev mode and productive mode, so please do not use `127.0.0.1` instead of `localhost` in your browser in dev mode.
+
+:::

@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "下一页",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "正在开始",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.API reference": {
+    "message": "API 参考",
+    "description": "The label for category API reference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Architecture": {
+    "message": "结构",
+    "description": "The label for category Architecture in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.link.PDF Download": {
+    "message": "PDF Download",
+    "description": "The label for link PDF Download in sidebar tutorialSidebar, linking to /pdf"
+  }
+}
