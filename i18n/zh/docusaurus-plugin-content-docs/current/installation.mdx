@@ -1,0 +1,249 @@
+---
+title: 安装
+description: Getting started with Casnode
+keywords:
+  - installation
+  - configuration
+  - deploy
+authors:
+  - kininaru
+---
+
+这将有助于您在服务器上部署Casnode 如果您想要通过 BT 面板或 Docker 安装 Casnode ，请在 [BT Panel](./bt-panel.md) and [Docker](./docker.md) 查看详细信息。
+
+请先克隆Casnode
+```bash
+git clone https://github.com/casbin/casnode
+```
+然后按照这些步骤轻松设置您自己的论坛！
+
+## 生产环境
+
+### 1. 设置Casdoor
+
+Casnode 使用 [Casdoor](https://github.com/casbin/casdoor) 来管理成员。 所以您需要在Casdoor 实例中创建一个组织和一个Casnode 的应用程序。
+
+按照这些步骤设置Casdoor for Casnode:
+- Casdoor配置向导(点击 [此处](https://casdoor.org/docs/overview) 获取更多Casdoor详细信息)
+- 登录到机构“built-in”
+- 点击顶部栏中的 **Organizations**
+- 点击 **添加** 按钮
+- 记住组织名称, 这里我使用 **casbin-forum** 作为我的组织名称： ![组织](/img/installation/organization.png)
+
+- 点击 **顶部栏中的应用程序**
+- 点击 **添加** 按钮
+- 记住应用程序名称, 这里我使用论坛作为我的应用程序名称:
+- 点击 **编辑**
+
+![应用程序](/img/installation/application.png)
+
+- 选择您刚刚创建的组织作为应用程序组织
+
+![选择](/img/installation/chooseorganization.png)
+- 修改重定向URL到论坛 URL。 如果您处于正在开发的环境中，您的重定向URL是 **http://localhost:3000/callback**。 如果您处于生产环境，您的重定向URL是 **http://yourip:7000/callback**
+
+![重定向器](/img/installation/redirecturls.png)
+- 点击 **保存** 并记住 `客户端 ID` 和 `客户端密钥`
+
+![客户](/img/installation/client.png)
+
+### 2. 修改 `conf/app.conf`
+
+以下是配置项目的解释：
+
+#### Database connection:
+
+#### Casnode database
+
+```ini {2}
+driverName = mysql
+dataSourceName = root:123@tcp(localhost:3306)/
+dbName = casnode
+```
+
+#### Casdoor database
+
+```ini
+casdoorDbName = casdoor
+```
+
+:::tip
+
+Casdoor's `driverName` and `dataSourceName` are the same as casnode by default. If your Casdoor and Casnode are not in the same database, you can set up the casdoor database in [casdoor/adapter.go](https://github.com/casbin/casnode/casdoor/adapter.go)
+
+Here we provide an example:
+
+1. Add casdoor configuration in `conf/app.conf`:
+
+```ini
+casdoorDriverName =
+casdoorDataSourceName =
+```
+
+2. Modify the `func InitCasdoorAdapter()`:
+
+
+```go
+    adapter = NewAdapter(beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDriverName"), beego.AppConfig.String("casdoorDbName"))
+```
+
+:::
+
+#### Object Storage Service (Casnode uses OSS to store resources):
+
+```ini
+OSSProvider = ""
+accessKeyID     = ""
+accessKeySecret = ""
+OSSCustomDomain = ""
+OSSBasicPath = ""
+OSSRegion = ""
+OSSEndPoint = ""
+OSSBucket = ""
+```
+
+If you can not access Google in normal ways, you need to set up a http proxy here:
+
+```ini
+httpProxy = "127.0.0.1:10808"
+```
+
+#### Casdoor config:
+
+```ini {2,5,8,13}
+# Your Casdoor endpoint in step 1
+casdoorEndpoint = http://localhost:8000
+
+# Client ID you copied in step 1
+clientId = xxx
+
+# Client Secret you copied in step 1
+clientSecret = xxx
+
+jwtSecret = CasdoorSecret
+
+# Organization name in step 1
+casdoorOrganization = "casbin-forum"
+```
+
+### 3. 修改 `web/src/Conf.js`
+
+```js {3,6,9,12}
+export const AuthConfig = {
+  // Your Casdoor endpoint in step 1
+  serverUrl: "http://localhost:7001",
+
+  // Client ID you copied in step 1
+  clientId: "014ae4bd048734ca2dea",
+
+  // Application name you copied in step 1
+  appName: "app-casbin-forum",
+
+  // Organization name you copied in step 1
+  organizationName: "casbin-forum",
+};
+```
+
+### 4. 构建前端
+
+In folder `web`, run the following commands:
+
+````mdx-code-block
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn', },
+    { label: 'npm', value: 'npm', },
+  ]
+}>
+
+<TabItem value="yarn">
+
+```bash
+yarn install && yarn run build
+```
+
+</TabItem>
+
+<TabItem value="npm">
+
+```bash
+npm install && npm run build
+```
+</TabItem>
+
+</Tabs>
+
+````
+### 5. 重建后端
+In repository root, run:
+```shell
+go build
+./casnode
+```
+
+Then the Casnode app should run on port 7000. You can setup a nginx proxy pass to manage SSL or something else.
+
+For most of site owners who want to develop a forum using Casnode, steps above is enough. But if you are a developer, want to contribute to Casnode, or modify the code to suit your own environment, then you can run Casnode in the developing mode. Please follow these steps to start developing mode:
+
+## 开发环境
+
+### 1. 执行上文第1-3步
+
+### 4. 运行后退结束
+
+```go
+go run main.go
+```
+### 5. 运行前端
+
+In `web` folder:
+
+````mdx-code-block
+
+<Tabs
+  defaultValue="yarn"
+  values={[
+    { label: 'Yarn', value: 'yarn', },
+    { label: 'npm', value: 'npm', },
+  ]
+}>
+
+<TabItem value="yarn">
+
+```bash
+yarn install
+yarn run start
+```
+
+</TabItem>
+
+<TabItem value="npm">
+
+```bash
+npm install
+npm run start
+```
+</TabItem>
+
+</Tabs>
+
+````
+Now, Casnode runs its front end at port 3000 and runs it's back end at port 7000. You can modify the code and see what will happen.
+:::caution
+The front end uses these codes to determine whether it is a dev mode:
+```js
+export function initServerUrl() {
+  const hostname = window.location.hostname;
+  if (hostname === "localhost") {
+    ServerUrl = `http://${hostname}:7000`;
+  }
+}
+```
+It means if hostname is `localhost`, then you are in dev mode. If not, then you are in productive mode. Port of the back end is not same in dev mode and productive mode, so please do not use `127.0.0.1` instead of `localhost` in your browser in dev mode.
+
+:::
