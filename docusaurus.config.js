@@ -215,9 +215,9 @@ var _hmt = _hmt || [];
           // Please change this to your repo.
           editUrl: ({locale, docPath}) => {
             if (locale === "en") {
-              return `https://github.com/casbin/casbin-website-v2/edit/master/docs/${docPath}`;
+              return `https://github.com/casnode/casnode-website/edit/master/docs/${docPath}`;
             } else {
-              return `https://github.com/casbin/casbin-website-v2/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
+              return `https://github.com/casnode/casnode-website/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
             }
           },
         },
@@ -226,9 +226,9 @@ var _hmt = _hmt || [];
           // Please change this to your repo.
           editUrl: ({locale, blogDirPath, blogPath}) => {
             if (locale === "en") {
-              return `https://github.com/casbin/casbin-website-v2/edit/master/${blogDirPath}/${blogPath}`;
+              return `https://github.com/casnode/casnode-website/edit/master/${blogDirPath}/${blogPath}`;
             } else {
-              return `https://github.com/casbin/casbin-website-v2/edit/master/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
+              return `https://github.com/casnode/casnode-website/edit/master/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
             }
           },
         },
