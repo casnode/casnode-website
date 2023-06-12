@@ -1,0 +1,16 @@
+{
+    "ignorePatterns": [
+        {
+            "pattern": "^[^h]"
+        },
+        {
+            "pattern": "^http://localhost"
+        },
+        {
+            "pattern": "^http://yourip"
+        },
+        {
+            "pattern": "^http://your-ip"
+        }
+    ]
+}
