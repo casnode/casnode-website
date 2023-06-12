@@ -69,5 +69,5 @@ docker-compose up
 
 Next visit http://your-ip:7000, click login, enter the account you added before, user_1/123, you have now successfully logged in to Casnode.  
 
-More settings reference [casnode.](https://casnode.org/docs)
+More settings reference [casnode.org](https://casnode.org/docs/overview).
 
