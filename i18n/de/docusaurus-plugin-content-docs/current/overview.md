@@ -8,12 +8,12 @@ authors:
   - kininaru
 ---
 
-Casnode is a forum developed by [Casbin community](https://casbin.io/). Die detaillierte Architektur:
+Casnode is a forum developed by [Casbin community](https://casbin.org/). Die detaillierte Architektur:
 
 | Name     | Beschreibung                    | Werkzeuge                     | Quellcode                                         |
 | -------- | ------------------------------- | ----------------------------- | ------------------------------------------------- |
 | Frontend | Web-Frontend UI für Casnode     | JavaScript und reagieren      | https://github.com/casbin/casnode/tree/master/web |
-| Backend  | RESTful API Backend für Casnode | Golang + Beego + MySQL + Xorm | https://de.de.de.de/                              |
+| Backend  | RESTful API Backend für Casnode | Golang + Beego + MySQL + Xorm | https://github.com/casbin/casnode/                              |
 
  Die Casbin-Community benutzt das Forum als offizielles Forum: [Casnode](https://forum.casbin.com/).
 

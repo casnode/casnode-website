@@ -7,7 +7,7 @@ Casnode ist ein von [Casbin Community](https://casbin.org/) entwickeltes Forum. 
 | Name     | Beschreibung                    | Werkzeuge                     | Quellcode                                         |
 | -------- | ------------------------------- | ----------------------------- | ------------------------------------------------- |
 | Frontend | Web-Frontend UI für Casnode     | JavaScript und reagieren      | https://github.com/casbin/casnode/tree/master/web |
-| Backend  | RESTful API Backend für Casnode | Golang + Beego + MySQL + Xorm | https://de.de.de.de/                              |
+| Backend  | RESTful API Backend für Casnode | Golang + Beego + MySQL + Xorm | https://github.com/casbin/casnode/                              |
 
  Die Casbin-Community benutzt das Forum als offizielles Forum: [Casnode](https://forum.casbin.com/).
 
