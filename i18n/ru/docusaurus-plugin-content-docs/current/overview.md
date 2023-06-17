@@ -8,7 +8,7 @@ authors:
   - kininaru
 ---
 
-Casnode is a forum developed by [Casbin community](https://casbin.io/). Подробная архитектура:
+Casnode is a forum developed by [Casbin community](https://casbin.org/). Подробная архитектура:
 
 | Наименование | Описание                             | Инструменты                   | Исходный код                                      |
 | ------------ | ------------------------------------ | ----------------------------- | ------------------------------------------------- |
