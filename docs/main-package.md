@@ -9,9 +9,9 @@ There are several packages in the backend of Casnode. The main function and the 
 
 ## main
 
-The main package is the entrance of Casnode. We do some basic setup steps in the main package: 
+The main package is the entrance of Casnode. We do some basic setup steps in the main package:
 
-* **Setup some global variables**: Database adapter, http Client, OSS adapter, Segmenter and Forum basic info (forum version, online number, Google Groups Crawlers) 
+* **Setup some global variables**: Database adapter, http Client, OSS adapter, Segmenter and Forum basic info (forum version, online number, Google Groups Crawlers)
 
 * **Setup filters:** API requests filter, search engine bot filter
 
