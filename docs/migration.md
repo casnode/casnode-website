@@ -5,7 +5,7 @@ keywords: [discuz, discuz!, discuzx]
 authors: [hsluoyz]
 ---
 
-Casnode has provided a lot of Go scripts to help users migrate their forums from DiscuzX 3.x to Casnode. The scripts are located at: https://github.com/casbin/casnode/tree/master/discuzx
+Casnode has provided a lot of Go scripts to help users migrate their forums from DiscuzX 3.x to Casnode. The scripts are located at: <https://github.com/casbin/casnode/tree/master/discuzx>
 
 A Xorm-supported database (e.g., MySQL) is used by Cansode to store forum data like topics and replies. Object storage (as the form of Casdoor storage provider) is used by Casnode to store images and attachment files.
 
@@ -13,7 +13,7 @@ A Xorm-supported database (e.g., MySQL) is used by Cansode to store forum data l
 
 You need to prepare the following environments before conducting the migration:
 
-1. A cloud VM (better with above 4 cores and 8GB memory, 8 cores and 16GB is even better), better with Intranet connection with the database for higher speed. This VM is used to run the Go migration scripts. 
+1. A cloud VM (better with above 4 cores and 8GB memory, 8 cores and 16GB is even better), better with Intranet connection with the database for higher speed. This VM is used to run the Go migration scripts.
 2. A Casnode git repository with the Go migration scripts in the above VM (the Casnode instance can be running or stopped).
 3. A running Casdoor instance (better in the same cloud VM for higher speed), with at least one object storage is configured as a Casdoor storage provider. This is used for uploading the images and attachment files of DiscuzX to the object storage.
 4. Your DiscuzX instance is online.
@@ -34,7 +34,7 @@ Configure the Casdoor database in Casnode's app.conf, so Casnode can directly co
 casdoorDbName = casdoor
 ```
 
-Configure the migration script at: https://github.com/casbin/casnode/blob/master/discuzx/conf.go .
+Configure the migration script at: <https://github.com/casbin/casnode/blob/master/discuzx/conf.go> .
 
 1. dbName: your DiscuzX's DB name
 2. discuzxDomain: your DiscuzX's public domain, with trailing slash
@@ -73,7 +73,7 @@ The estimation time we provide in the following sections is measured in a machin
 
 To migrate all your DiscuzX's UCenter members to Casdoor's users:
 
-Run `TestAddUsers` in: https://github.com/casbin/casnode/blob/master/discuzx/user_test.go
+Run `TestAddUsers` in: <https://github.com/casbin/casnode/blob/master/discuzx/user_test.go>
 
 This step will roughly take 2 minutes for 60,000 users.
 
@@ -81,7 +81,7 @@ This step will roughly take 2 minutes for 60,000 users.
 
 To migrate all your DiscuzX's UCenter members' avatars to Casdoor's resources (via Casdoor's storage provider, backed by the cloud object storage):
 
-Run `TestSyncAvatars` in: https://github.com/casbin/casnode/blob/master/discuzx/avatar_test.go
+Run `TestSyncAvatars` in: <https://github.com/casbin/casnode/blob/master/discuzx/avatar_test.go>
 
 This step will roughly take 10 minutes for 60,000 users.
 
@@ -89,7 +89,7 @@ This step will roughly take 10 minutes for 60,000 users.
 
 To migrate all your DiscuzX's forums to Casdoor's tabs and nodes:
 
-Run `TestAddForums` in: https://github.com/casbin/casnode/blob/master/discuzx/forum_test.go
+Run `TestAddForums` in: <https://github.com/casbin/casnode/blob/master/discuzx/forum_test.go>
 
 This step will usually finish in 2 seconds.
 
@@ -97,7 +97,7 @@ This step will usually finish in 2 seconds.
 
 To migrate all your DiscuzX's threads & posts to Casdoor's topics & replies:
 
-Run `TestAddThreads` in: https://github.com/casbin/casnode/blob/master/discuzx/thread_test.go
+Run `TestAddThreads` in: <https://github.com/casbin/casnode/blob/master/discuzx/thread_test.go>
 
 This step will roughly take 7 minutes for 10,000 users.
 

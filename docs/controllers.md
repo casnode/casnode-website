@@ -5,7 +5,7 @@ keywords: [handler, controllers, request]
 authors: [kininaru]
 ---
 
-In `routers/router.go`, you can find lots of lines like 
+In `routers/router.go`, you can find lots of lines like
 
 ```go
 beego.Router("/api/get-topics", &controllers.ApiController{}, "GET:GetTopics")
