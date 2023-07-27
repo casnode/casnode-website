@@ -22,7 +22,7 @@ function Help() {
           </div>
           <div className="col">
             <h2><Translate>Tencent QQ</Translate></h2>
-            <Translate>You can contact us by joining the QQ group:</Translate> <a href="https://qm.qq.com/cgi-bin/qm/qr?k=QKJ53gmeMj5BnnPsf23JasAQdmQF8yEl&jump_from=webapi">555019739</a>.
+            <Translate>You can contact us by joining the QQ group:</Translate> <a href="https://cdn.casdoor.com/casdoor/resource/built-in/admin/qq_casnode.png">963536134</a>.
           </div>
           <div className="col">
             <h2>Github</h2>
