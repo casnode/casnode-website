@@ -14,19 +14,19 @@ function Help() {
         <div className="row">
           <div className="col">
             <h2><Translate>Forum</Translate></h2>
-            <Translate>Discuss with maintainers or share your experience about Casnode on</Translate> <a href="https://forum.casbin.com"><Translate>Casnode Forum</Translate></a>.
+            <Translate>Discuss with maintainers or share your experience about Casnode on</Translate> <a href="https://forum.casbin.com" target="_blank" rel="noreferrer"><Translate>Casnode Forum</Translate></a>.
           </div>
           <div className="col">
             <h2><Translate>Discord</Translate></h2>
-            <Translate>You can join the conversation on</Translate> <a href="https://discord.gg/d8dsAWgn43"><Translate>Discord</Translate></a> <Translate>for contributing help.</Translate>
+            <Translate>You can join the conversation on</Translate> <a href="https://discord.gg/d8dsAWgn43" target="_blank" rel="noreferrer"><Translate>Discord</Translate></a> <Translate>for contributing help.</Translate>
           </div>
           <div className="col">
             <h2><Translate>Tencent QQ</Translate></h2>
-            <Translate>You can contact us by joining the QQ group:</Translate> <a href="https://cdn.casdoor.com/casdoor/resource/built-in/admin/qq_casnode.png">555019739</a>.
+            <Translate>You can contact us by joining the </Translate> <a href="https://cdn.casdoor.com/casdoor/resource/built-in/admin/qq_casnode.png" target="_blank" rel="noreferrer">QQ group</a>.
           </div>
           <div className="col">
             <h2>Github</h2>
-            <Translate>At our</Translate> <a href="https://github.com/casbin/casnode"><Translate>GitHub repo</Translate></a><Translate>, browse and submit</Translate> <a href="https://github.com/casbin/casnode/issues">issues</a> <Translate>or</Translate> <a href="https://github.com/casbin/casnode/pulls">pull requests</a> <Translate>for bugs you find or any new features you may want implemented.</Translate>
+            <Translate>At our</Translate> <a href="https://github.com/casbin/casnode" target="_blank" rel="noreferrer"><Translate>GitHub repo</Translate></a><Translate>, browse and submit</Translate> <a href="https://github.com/casbin/casnode/issues" target="_blank" rel="noreferrer">issues</a> <Translate>or</Translate> <a href="https://github.com/casbin/casnode/pulls" target="_blank" rel="noreferrer">pull requests</a> <Translate>for bugs you find or any new features you may want implemented.</Translate>
           </div>
         </div>
       </div>
