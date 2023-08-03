@@ -15,7 +15,6 @@ module.exports = {
     defaultLocale: "en",
     locales: ["en", "zh", "fr", "de", "ko", "ru", "ja"],
   },
-  trailingSlash: false,
   themeConfig: {
     algolia: {
       appId: "D23M79WNKM",
