@@ -23,4 +23,4 @@ beego.BConfig.WebConfig.Session.SessionProviderConfig = "./tmp"
 beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 3600 * 24 * 365
 ```
 
-Please refer to [Beego session](https://beego.me/docs/mvc/controller/session.md) if you want to use another session adapter in Beego.
+Please refer to [Beego session](https://beego.wiki/docs/mvc/controller/session/) if you want to use another session adapter in Beego.
