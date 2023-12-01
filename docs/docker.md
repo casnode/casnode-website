@@ -54,11 +54,11 @@ Now that Casdoor has been configured, visit <http://your-ip:8000> to configure C
 
 The default administrator login account is ```admin/123```.
 
-Click Organization, then click Add, click Edit for the added organization, and change the name to the organization name you want. Here I set it to casbin-forum, and then click Save.
+Click Organization, then click Add, click Edit for the added organization, and change the name to the organization name you want. Here I set it to casnode, and then click Save.
 
-Click Applications, then click Add, for the application you just added, click Edit, change the name to the application name you want, I changed it to app-casbin-forum.Click on the organization, select the organization you just added, my organization  is casbin- forum. Click Redirect URLs, modify the link in the box to `http://your-ip:7000/callback`.Finally, remember the Client ID and Client Secret, and click Save.
+Click Applications, then click Add, for the application you just added, click Edit, change the name to the application name you want, I changed it to app-casnode.Click on the organization, select the organization you just added, my organization  is casnode. Click Redirect URLs, modify the link in the box to `http://your-ip:7000/callback`.Finally, remember the Client ID and Client Secret, and click Save. 
 
-Click Users, click Add, then click Edit, modify the added user, click Organization, select casbin-forum, and click is admin. Finally click Save, now your organization has an administrator account.
+Click Users, click Add, then click Edit, modify the added user, click Organization, select casnode, and click is admin. Finally click Save, now your organization has an administrator account.
 <br/>
 
 ### Configure casnode

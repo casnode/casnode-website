@@ -27,7 +27,7 @@ Follow these steps to setup Casdoor for Casnode:
 - Sign into the organization "built-in"
 - Click **Organizations** in the top bar
 - Click **add** button
-- Remember the Organization name, here I use **casbin-forum** as my organization name:
+- Remember the Organization name, here I use **casnode** as my organization name:
 ![organization](/img/installation/organization.png)
 
 - Click **Applications** in the top bar
@@ -125,7 +125,7 @@ clientSecret = xxx
 jwtSecret = CasdoorSecret
 
 # Organization name in step 1
-casdoorOrganization = "casbin-forum"
+casdoorOrganization = "casnode"
 ```
 
 ### 3. Modify `web/src/Conf.js`
@@ -139,10 +139,10 @@ export const AuthConfig = {
   clientId: "014ae4bd048734ca2dea",
 
   // Application name you copied in step 1
-  appName: "app-casbin-forum",
+  appName: "app-casnode",
 
   // Organization name you copied in step 1
-  organizationName: "casbin-forum",
+  organizationName: "casnode",
 };
 ```
 

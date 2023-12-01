@@ -65,7 +65,7 @@ function LoginContent() {
               <BrowserWindow>
                 <div className={styles.loginiframediv}>
                   <CasnodeCard width="870px" height="720px"
-                    src="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casbin-forum"
+                    src="https://door.casdoor.com/login/oauth/authorize?client_id=014ae4bd048734ca2dea&response_type=code&redirect_uri=https://forum.casbin.com/callback&scope=read&state=app-casnode"
                   />
                 </div>
               </BrowserWindow>
