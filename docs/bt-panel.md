@@ -82,8 +82,8 @@ Change MySQL password provided by the BT panel as **123**.
 
 ```shell
 cd web
-npm install
-npm run build
+yarn install
+yarn build
 cd ..
 sudo nohup ./main &
 ```
@@ -121,8 +121,8 @@ Change MySQL password provided by the BT panel to **123**, then find casdoorEndp
 Edit `web/src/Conf.js`, modify `serverUrl` to <http://your-ip:8000> (Casdoor front-end access address), modify `ClientId` to the ClientId of the application just added, modify `appName` to the set application name, and modify `organizationName` to the set organization name.
 
 ```shell
-npm install
-npm run build
+yarn install
+yarn build
 cd ..
 nohup ./main &
 ```
