@@ -7,39 +7,39 @@ import {useColorMode} from "@docusaurus/theme-common";
 const FeatureList = [
   {
     title: translate({
-      message: "Easy to Use",
+      message: "Easy to Run",
     }),
     path: "/img/model",
     description: (
       <>
         <Translate>
-        Only few steps to setup Casnode!
+        Download a release, run one binary, and the first account is the administrator. No Ruby, Redis or background queue.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "All kinds of DB and OSS",
+      message: "Any Database",
     }),
     path: "/img/storage",
     description: (
       <>
         <Translate>
-        Casnode supports many kinds of Databases and OSS provider. And you can add your own providers easily!
+        Start with SQLite in a single file, or use MySQL, PostgreSQL or SQL Server. Uploads stay on your disk.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Multi-Language Support",
+      message: "Built-in Accounts and SSO",
     }),
     path: "/img/language",
     description: (
       <>
         <Translate>
-      Now, Casnode supports Chinese and English UI. We use i18n to support multi-lang, so you can make a PR or an issue to support your language!
+        Email and password accounts work out of the box, and any OpenID Connect or OAuth 2.0 provider can be added in the admin area.
         </Translate>
       </>
     ),

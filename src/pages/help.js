@@ -14,7 +14,7 @@ function Help() {
         <div className="row">
           <div className="col">
             <h2><Translate>Forum</Translate></h2>
-            <Translate>Discuss with maintainers or share your experience about Casnode on</Translate> <a href="https://forum.casbin.com" target="_blank" rel="noreferrer"><Translate>Casnode Forum</Translate></a>.
+            <Translate>Discuss with maintainers or share your experience about Casnode on</Translate> <a href="https://forum.casbin.com" target="_blank" rel="noreferrer"><Translate>Casbin Forum</Translate></a>.
           </div>
           <div className="col">
             <h2><Translate>Discord</Translate></h2>
@@ -26,7 +26,7 @@ function Help() {
           </div>
           <div className="col">
             <h2>Github</h2>
-            <Translate>At our</Translate> <a href="https://github.com/casbin/casnode" target="_blank" rel="noreferrer"><Translate>GitHub repo</Translate></a><Translate>, browse and submit</Translate> <a href="https://github.com/casbin/casnode/issues" target="_blank" rel="noreferrer">issues</a> <Translate>or</Translate> <a href="https://github.com/casbin/casnode/pulls" target="_blank" rel="noreferrer">pull requests</a> <Translate>for bugs you find or any new features you may want implemented.</Translate>
+            <Translate>At our</Translate> <a href="https://github.com/casnode/casnode" target="_blank" rel="noreferrer"><Translate>GitHub repo</Translate></a><Translate>, browse and submit</Translate> <a href="https://github.com/casnode/casnode/issues" target="_blank" rel="noreferrer">issues</a> <Translate>or</Translate> <a href="https://github.com/casnode/casnode/pulls" target="_blank" rel="noreferrer">pull requests</a> <Translate>for bugs you find or any new features you may want implemented.</Translate>
           </div>
         </div>
       </div>

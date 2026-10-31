@@ -3,7 +3,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Casnode · A beautiful and simple next-generation forum software based on Go and React",
+  title: "Casnode · Open-source forum with the look of Discourse, built with Go and Next.js",
   url: "https://casnode.org",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -39,14 +39,15 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "overview",
+          docId: "introduction",
           position: "left",
           label: "Docs",
         },
         {
-          href: "https://forum.casbin.com/swagger/",
-          label: "RESTful API",
+          type: "doc",
+          docId: "api",
           position: "left",
+          label: "API",
         },
         {
           label: "Blog",
@@ -73,7 +74,7 @@ module.exports = {
           ],
         },
         {
-          href: "https://github.com/casbin/casnode",
+          href: "https://github.com/casnode/casnode",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -95,8 +96,8 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Overview",
-              to: "/docs/overview",
+              label: "Introduction",
+              to: "/docs/introduction",
             },
             {
               label: "Get Started",
@@ -104,7 +105,7 @@ module.exports = {
             },
             {
               label: "Casnode API",
-              href: "https://forum.casbin.com/swagger/",
+              to: "/docs/api",
             },
           ],
         },
@@ -138,11 +139,11 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/casbin/casnode",
+              href: "https://github.com/casnode/casnode",
             },
             {
               html: `
-              <iframe src="https://ghbtns.com/github-btn.html?user=casbin&repo=casnode&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub">Casdoor</iframe>
+              <iframe src="https://ghbtns.com/github-btn.html?user=casnode&repo=casnode&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub">Casnode</iframe>
               `,
             },
             {
@@ -209,7 +210,29 @@ var _hmt = _hmt || [];
       },
     ],
   ],
-  plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-hotjar"],
+  plugins: [
+    "docusaurus-plugin-sass",
+    "docusaurus-plugin-hotjar",
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {from: "/docs/overview", to: "/docs/introduction"},
+          {from: "/docs/main-features", to: "/docs/features"},
+          {from: "/docs/bt-panel", to: "/docs/deployment"},
+          {from: "/docs/migration", to: "/docs/importing"},
+          {from: "/docs/provider", to: "/docs/accounts-and-sso"},
+          {from: "/docs/api-overview", to: "/docs/api"},
+          {from: "/docs/architecture-overview", to: "/docs/architecture"},
+          {from: "/docs/main-package", to: "/docs/architecture"},
+          {from: "/docs/routers", to: "/docs/architecture"},
+          {from: "/docs/controllers", to: "/docs/architecture"},
+          {from: "/docs/server-side-rendering", to: "/docs/architecture"},
+          {from: "/docs/internationalization", to: "/docs/development"},
+        ],
+      },
+    ],
+  ],
   scripts: [
     {
       src: "/js/isMainland.js",

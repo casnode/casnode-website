@@ -1,82 +1,71 @@
 ---
 title: Docker
-description: Install casnode through docker
-keywords: [docker]
-authors: [oranges-eating]
+description: Run Casnode in a container
+keywords: [docker, container, compose]
+authors: [hsluoyz]
 ---
 
-:::caution
+The repository contains a multi-stage `Dockerfile` that builds the Next.js frontend, compiles the Go backend and produces a small runtime image based on `node:22-alpine`.
 
-The tutorial environment is Ubuntu 20.0.4 .  
+## Build and run
 
-:::
-
-## Install casnode through docker
-
-### Prepare work
-
-#### Install docker and docker-compose
-
-Install Docker and Docker-compose, you see [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/)
-
-#### Clone casnode & casdoor
-
-Next, clone Casdoor and Casndoe from GitHub.
-
-```shell
-git clone https://github.com/casbin/casdoor.git
-git clone https://github.com/casbin/casnode.git
+```bash
+docker build -t casnode .
+docker run -d --name casnode \
+  -p 16900:16900 \
+  -v casnode-data:/app/data \
+  casnode
 ```
 
-Now, you can see two folders, `casnode` and `casdoor`.
+Open `http://localhost:16900`. The first account you register is the administrator.
 
-### Configure casdoor
+The image sets `dbName=/app/data/casnode.db` and `uploadsDir=/app/data/uploads`, so the SQLite database and uploads live in the `casnode-data` volume. Back up that volume, or the database and uploads separately if you use another database.
 
-#### Run casdoor
+## Use MySQL or PostgreSQL
 
-We first configure casdoor.
+Configuration items can be passed as environment variables with the same names. This runs Casnode against a MySQL 8 container:
 
-Edit `conf/app.conf`, modify **dataSourceName = root:123@tcp(localhost:3306)/ to dataSourceName = root:123@tcp(db:3306)/**
+```yaml
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: change-me
+      MYSQL_DATABASE: casnode
+    volumes:
+      - mysql-data:/var/lib/mysql
 
-```shell
-docker-compose up
+  casnode:
+    build: .
+    ports:
+      - "16900:16900"
+    environment:
+      driverName: mysql
+      dataSourceName: root:change-me@tcp(db:3306)/
+      dbName: casnode
+      httpport: "16900"
+    depends_on:
+      - db
+
+volumes:
+  mysql-data:
 ```
 
-:::tip
+For PostgreSQL, use a DSN such as `user=casnode password=change-me host=db port=5432 sslmode=disable` and `driverName: postgres`. For SQL Server, use `driverName: mssql` and a DSN such as `sqlserver://sa:change-me@db:1433`.
 
-mysql and casdoor are in different docker containers.
+You can also mount a `conf/app.local.conf` into the container instead of passing environment variables:
 
-:::
-
-#### Configure casnode in casdoor
-
-Now that Casdoor has been configured, visit <http://your-ip:8000> to configure Casnode.  
-
-The default administrator login account is ```admin/123```.
-
-Click Organization, then click Add, click Edit for the added organization, and change the name to the organization name you want. Here I set it to casnode, and then click Save.
-
-Click Applications, then click Add, for the application you just added, click Edit, change the name to the application name you want, I changed it to app-casnode.Click on the organization, select the organization you just added, my organization  is casnode. Click Redirect URLs, modify the link in the box to `http://your-ip:7000/callback`.Finally, remember the Client ID and Client Secret, and click Save. 
-
-Click Users, click Add, then click Edit, modify the added user, click Organization, select casnode, and click is admin. Finally click Save, now your organization has an administrator account.
-<br/>
-
-### Configure casnode
-
-Next we configure in Casnode.
-
-Edit `conf/app.conf`, modify **dataSourceName = root:123@tcp(localhost:3306)/** to **dataSourceName = root:123@tcp(db:3306)/** so that the data come from your database.
-
-Then find `casdoorEndpoint`, modify it to `http://your-ip:8000` (Casdoor backend address), find `clientId` and `clientSecret`, and modify them to the previously remembered Application client id and client secret, find casdoorOrganization, modify the organization name to you set.
-
-Edit `web/src/Conf.js` , modify `serverUrl` to <http://your-ip:8000> (Casdoor front-end access address), modify `clientId` to the clientId of the application just added, modify `appName` to the set application name, and modify `organizationName` to the set organization name.
-
-Next, run casnode with docker
-
-```shell
-docker-compose up
+```bash
+docker run -d -p 16900:16900 \
+  -v casnode-data:/app/data \
+  -v ./app.local.conf:/app/conf/app.local.conf:ro \
+  casnode
 ```
 
-Next visit <http://your-ip:7000>, click login, enter the account you added before, user_1/123, you have now successfully logged in to Casnode.  
+## Behind a reverse proxy
 
-More settings reference [casnode.org](https://casnode.org/docs/overview).
+The Go backend listens on `httpport` and proxies page requests to the Next.js server on `httpport + 1`. Only `httpport` needs to be exposed. When a proxy is in front, set `trustProxyHeader = true` (or `TRUSTPROXYHEADER=true`) so that the forum records the real client IP. See [Deployment](deployment.md).
+
+## Upgrades
+
+Build a new image and replace the container; the volume keeps the data. A 2.x image can be replaced by a newer 2.x image in place. A 1.x database cannot be upgraded; see [Introduction](introduction.md#casnode-2x-is-a-rewrite).

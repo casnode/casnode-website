@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install and Build 🔧
         run: |
@@ -31,15 +31,15 @@ jobs:
         run: |
           yarn serve > /dev/null &
           sleep 3s
-          npx docusaurus-prince-pdf --include-index -u http://localhost:3000/docs/overview --output pdf/Casnode_Docs.pdf
-          npx docusaurus-prince-pdf --include-index -u http://localhost:3000/zh/docs/overview --list-only
+          npx docusaurus-prince-pdf --include-index -u http://localhost:3000/docs/introduction --output pdf/Casnode_Docs.pdf
+          npx docusaurus-prince-pdf --include-index -u http://localhost:3000/zh/docs/introduction --list-only
           wget https://gist.githubusercontent.com/Selflocking/7a07d91d34ee227c93d2d8f583f981e3/raw/996a610b96e7e1f42e06ec555528f3427c2fb647/print.css
-          prince --no-warn-css --style=print.css --input-list=./pdf/localhost-zh-docs-overview.txt -o pdf/Casnode_Docs_zh.pdf
+          prince --no-warn-css --style=print.css --input-list=./pdf/localhost-zh-docs-introduction.txt -o pdf/Casnode_Docs_zh.pdf
           rm pdf/*.txt
           mv pdf/* build/pdf/ -f
 
       - name: Upload results 📤
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PDFs
           path: build/pdf/
